@@ -1,5 +1,5 @@
 ---
-path: "2016/09/16/writing-a-binary-search-algorithm-in-javascript"
+path: "/2016/09/16/writing-a-binary-search-algorithm-in-javascript"
 date: "2016-09-16T17:12:33.962Z"
 title: "Writing a Binary Search Algorithm in JavaScript"
 ---
