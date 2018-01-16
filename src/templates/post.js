@@ -10,14 +10,12 @@ export default function Template({ data }) {
   return (
     <Container>
       <Helmet title={`Tyler Reckart - ${post.frontmatter.title}`} />
-      <div className="blog-post">
-        <Title>{post.frontmatter.title}</Title>
-        <Date>{moment(post.frontmatter.date).format('MMMM Do YYYY')}</Date>
-        <Content
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </div>
+      <Title>{post.frontmatter.title}</Title>
+      <Date>{moment(post.frontmatter.date).format('MMMM Do YYYY')}</Date>
+      <Content
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </Container>
   );
 }

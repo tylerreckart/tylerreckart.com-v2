@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import moment from 'moment';
 
-import { Container, Content, Date, LinkTitle as Title } from '../components/styled';
+import { Container, Content, Date, LinkTitle as Title, TitleWrapper } from '../components/styled';
 
 export default ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
@@ -14,20 +14,22 @@ export default ({ data }) => {
         .map(({ node: post }) => {
           return (
             <div className="blog-post" key={post.id}>
-              <Title>
-                <Link
-                  to={post.frontmatter.path}
-                  style={{
-                    color: '#000000',
-                    fontSize: '24px',
-                    fontWeight: '500',
-                    letterSpacing: '0.01em',
-                    textDecoration: 'none'
-                  }}>
-                  {post.frontmatter.title}
-                </Link>
-              </Title>
-              <Date>{moment(post.frontmatter.date).format('MMMM Do YYYY')}</Date>
+              <TitleWrapper>
+                <Title>
+                  <Link
+                    to={post.frontmatter.path}
+                    style={{
+                      color: '#000000',
+                      fontSize: '24px',
+                      fontWeight: '500',
+                      letterSpacing: '0.01em',
+                      textDecoration: 'none'
+                    }}>
+                    {post.frontmatter.title}
+                  </Link>
+                </Title>
+                <Date>{moment(post.frontmatter.date).format('MMMM Do YYYY')}</Date>
+              </TitleWrapper>
               <Content dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
           );
