@@ -22,7 +22,7 @@ const TemplateWrapper = ({ children }) => (
     <div
       style={{
         margin: '0 auto',
-        maxWidth: 700,
+        maxWidth: '1000px',
         paddingTop: 0,
       }}
     >

@@ -5,6 +5,11 @@ export const Container = styled.div`
     margin: 0 1em;
   }
 
+  div {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
   p {
     padding: 0 1em;
 
