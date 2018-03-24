@@ -31,6 +31,7 @@ export default ({ data }) => {
                 <Date>{moment(post.frontmatter.date).format('MMMM Do YYYY')}</Date>
               </TitleWrapper>
               <Content dangerouslySetInnerHTML={{ __html: post.html }} />
+              <div style={{ height: `4em`, width: `100%` }} />
             </div>
           );
         })}

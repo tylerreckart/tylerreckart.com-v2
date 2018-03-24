@@ -40,6 +40,7 @@ export const Date = styled.h3`
   font-size: 16px;
   font-weight: 400;
   margin: 0;
+  max-width: 700px;
   padding: 0;
 `;
 
@@ -55,6 +56,7 @@ export const Title = styled.h2`
   letter-spacing: 0.01em;
   margin: 0 0 .5em 0;
   padding: 0;
+  max-width: 700px;
 `;
 
 export const TitleWrapper = styled.div`
