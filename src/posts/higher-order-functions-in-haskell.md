@@ -1,6 +1,6 @@
 ---
-path: "/2018/03/27/higher-order-functions"
-date: "2018-03-27T17:12:33.962Z"
+path: "/2018/03/24/higher-order-functions"
+date: "2018-03-24T17:12:33.962Z"
 title: "Higher Order Functions"
 ---
 
