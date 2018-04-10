@@ -18,10 +18,10 @@ export default function Template({ data }) {
   const initDisqusScript = () => {
     const d = document;
     const s = d.createElement('script');
-  
+
     s.src = 'https://tylerreckart.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
-  
+
     (d.head || d.body).appendChild(s);
 
     return (
@@ -30,12 +30,16 @@ export default function Template({ data }) {
   };
 
   const { markdownRemark: post } = data;
+  console.log(post);
   return (
     <Container>
       <Helmet title={`Tyler Reckart - ${post.frontmatter.title}`} />
       <TitleWrapper>
         <Title>{post.frontmatter.title}</Title>
-        <Date>{moment(post.frontmatter.date).format('MMMM Do YYYY')}</Date>
+        <Date>
+          {moment(post.frontmatter.date).format('MMMM Do YYYY')}
+          <a href={`https://tylerreckart.com${post.frontmatter.path}`}>∞</a>
+        </Date>
       </TitleWrapper>
       <Content
         className="blog-post-content"

@@ -38,18 +38,10 @@ export const Content = styled.div`
   a {
     color: #ef3b7d;
     padding: 2px 0 0px 0;
-    transition: all 50ms cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
-    border-bottom: 1px dotted #ef3b7d;
 
-    &:before {
-      content: " ";
-      position: relative;
-      z-index: 1;
-      top: 0;
-      width: 100%;
-      display: inline;
-      box-shadow: 0 -3px 0px 0px black;
+    &:hover {
+      border-bottom: 1px dotted #ef3b7d;
     }
   }
 `;
@@ -61,6 +53,12 @@ export const Date = styled.h3`
   margin: 0;
   max-width: 700px;
   padding: 0;
+
+  a {
+    color: #ef3b7d;
+    padding: 0 8px;
+    text-decoration: none;
+  }
 `;
 
 export const LinkTitle = styled.h2`

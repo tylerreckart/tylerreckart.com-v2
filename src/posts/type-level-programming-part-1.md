@@ -1,5 +1,5 @@
 ---
-path: "/2018/04/10/type-level-programming-part: 1"
+path: "/2018/04/10/type-level-programming-part-1"
 date: "2018-04-10T17:12:33.962Z"
 title: "Type Level Programming: Part 1"
 ---
