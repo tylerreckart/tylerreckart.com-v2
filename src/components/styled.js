@@ -32,7 +32,7 @@ export const Content = styled.div`
   }
 
   h3 {
-    padding: 0 16 px;
+    padding: 0 16px;
   }
 
   a {
