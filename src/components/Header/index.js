@@ -14,7 +14,6 @@ const Header = styled.header`
   div {
     color: #ffffff;
     font-size: 16px;
-    font-weight: 300;
     letter-spacing: 0.01em;
     line-height: 1.75em;
     margin: 0 auto;

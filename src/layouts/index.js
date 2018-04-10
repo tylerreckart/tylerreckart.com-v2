@@ -16,7 +16,8 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     >
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
     </Helmet>
     <Header />
     <div

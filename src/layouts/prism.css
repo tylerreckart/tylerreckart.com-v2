@@ -15,7 +15,6 @@ pre[class*="language-"] {
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: normal;
-    font-family: Menlo, Monaco, "Courier New", monospace;
     font-size: 14px;
     color: #ABCDFD;
     text-shadow: none;
@@ -25,7 +24,7 @@ pre[class*="language-"],
     background: #222232;
 }
 pre[class*="language-"] {
-    padding: 15px;
+    padding: 18px;
     border-radius: 4px;
     overflow: auto;
 }
