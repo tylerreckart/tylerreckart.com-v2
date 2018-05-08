@@ -30,7 +30,6 @@ export default ({ data }) => {
                 </Title>
                 <Date>
                   {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-                  <a href={`https://tylerreckart.com${post.frontmatter.path}`}>∞</a>
                 </Date>
               </TitleWrapper>
               <Content dangerouslySetInnerHTML={{ __html: post.html }} />

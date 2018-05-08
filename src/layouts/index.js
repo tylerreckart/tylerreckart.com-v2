@@ -18,6 +18,8 @@ const TemplateWrapper = ({ children }) => (
     >
       <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
+      <link href="./node_modules/c3/c3.min.css" rel="stylesheet" />
+      <script src="./node_modules/d3/dist/d3.min.js" type="text/javascript"></script>
     </Helmet>
     <Header />
     <div
