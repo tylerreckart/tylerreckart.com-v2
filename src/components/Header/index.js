@@ -38,7 +38,6 @@ const Header = styled.header`
     }
 
     nav, p {
-      padding: 0 1em;
 
       @media (max-width: 700px) {
         padding: 0;

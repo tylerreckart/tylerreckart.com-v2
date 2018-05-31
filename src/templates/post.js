@@ -7,7 +7,8 @@ import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 import { Container, Content, Date, Title, TitleWrapper } from '../components/styled';
 
 const Comments = styled.div`
-  padding: 0 1em;
+  max-width: 700px !important;
+  margin: 0 auto !important;
 
   @media (max-width: 700px) {
     padding: 0;
@@ -38,7 +39,6 @@ export default function Template({ data }) {
         <Title>{post.frontmatter.title}</Title>
         <Date>
           {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-          <a href={`https://tylerreckart.com${post.frontmatter.path}`}>∞</a>
         </Date>
       </TitleWrapper>
       <Content

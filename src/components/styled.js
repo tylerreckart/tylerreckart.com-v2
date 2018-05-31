@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   div {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 1000px;
   }
 
   p {
@@ -25,14 +25,32 @@ export const Content = styled.div`
   line-height: 30px;
 
   p {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: .75em 0;
+
     code {
       background-color: #E9EFF2;
       padding: 0 4px;
     }
+
+    img {
+      max-width: 1000px;
+      padding: .75em 0;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
-  h3 {
-    padding: 0 16px;
+  pre {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   a {
@@ -81,7 +99,8 @@ export const Title = styled.h2`
 `;
 
 export const TitleWrapper = styled.div`
-  padding: 0 1em;
+  max-width: 700px !important;
+  margin: 0 auto !important;
 
   @media (max-width: 700px) {
     padding: 0;

@@ -15,7 +15,6 @@ const Footer = styled.footer`
 
   p {
     margin: 0;
-    padding: 0 1em;
 
     @media (max-width: 700px) {
       padding: 0;
