@@ -33,14 +33,6 @@ export const Content = styled.div`
       background-color: #E9EFF2;
       padding: 0 4px;
     }
-
-    img {
-      max-width: 1000px;
-      padding: .75em 0;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
   pre {
