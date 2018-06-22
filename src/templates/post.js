@@ -9,6 +9,7 @@ import { Container, Content, Date, Title, TitleWrapper } from '../components/sty
 const Comments = styled.div`
   max-width: 700px !important;
   margin: 0 auto !important;
+  margin-top: 64px !important;
 
   @media (max-width: 700px) {
     padding: 0;

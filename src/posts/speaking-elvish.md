@@ -1,7 +1,7 @@
 ---
-path: "/2018/06/21/jumping-ship"
+path: "/2018/06/21/speaking-elvish"
 date: "2018-06-21T17:12:33.962Z"
-title: "Jumping Ship"
+title: "Speaking Elvish"
 ---
 
 One of my passions in programming is for the console. Yes, the dim, graphically uninteresting block hole of the command-line. As a software developer, nearly all of my work is done inside of a terminal window. Aside from the occasional foray into [VS Code](https://code.visualstudio.com/), most of my work is done on or around the command-line. This encompasses everything from running and inspecting local Docker containers to UI development with React in vim. Because of this, I tend to think a lot about how to extend and customize the terminal. Particularly about how to make my work more productive and enjoyable.
@@ -20,7 +20,7 @@ Here are a few of the things that initially drew me into the project:
 
 With the goal of configuring my own prompt in mind, I set out to learn Elvish. Building off of my previous shells, I used that time to develop [Gondolin](https://github.com/tylerreckart/gondolin)<sup><a href="#1">[1]</a></sup>. It's what I see as the next evolution of the git-centered prompt workflow that I have been developing over the past few years. What set the development of this prompt apart from the others was the difficulty involved. Elvish is still a very young language, and thus has a small ecosystem of libraries and modules.
 
-![](./images/gondolin_screenshot.png)
+<!-- ![](./images/gondolin_screenshot.png) -->
 
 I didn't have years of established methods to draw on. But, that didn't stop me. By [grokking](https://en.wikipedia.org/wiki/Grok) the implementations of these features in a shell I was already familiar with, I was able to use Elvish to completely reimplement features like a branch status readout or an actively-updated colorized timestamp of the last commit.
 

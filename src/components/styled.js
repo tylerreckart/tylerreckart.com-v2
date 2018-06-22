@@ -23,15 +23,21 @@ export const Content = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
+  max-width: 700px;
 
   p {
     max-width: 700px;
     margin: 0 auto;
     padding: .75em 0;
+    overflow: visible;
 
     code {
       background-color: rgba(171, 205, 253, 0.4);
       padding: 0 4px;
+    }
+
+    img {
+      width: 100%;
     }
   }
 
@@ -41,8 +47,29 @@ export const Content = styled.div`
   }
 
   a.gatsby-resp-image-link {
+    min-width: 1000px;
+    position: relative;
+    left: -50%;
+    transform: translateX(20%);
+
     &:hover {
       border: none;
+    }
+  }
+
+  @media (max-width: 1040px) {
+    a.gatsby-resp-image-link {
+      min-width: 760px;
+      transform: translateX(42%);
+    }
+  }
+
+  @media (max-width: 800px) {
+    a.gatsby-resp-image-link {
+      min-width: 100%;
+      positon: static;
+      left: 0%;
+      transform: translateX(0%);
     }
   }
 
