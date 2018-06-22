@@ -30,8 +30,53 @@ export const Content = styled.div`
     padding: .75em 0;
 
     code {
-      background-color: #E9EFF2;
+      background-color: rgba(171, 205, 253, 0.4);
       padding: 0 4px;
+    }
+  }
+
+  sup {
+    font-family: sans-serif;
+    font-size: 10px;
+  }
+
+  a.gatsby-resp-image-link {
+    &:hover {
+      border: none;
+    }
+  }
+
+  hr {
+    max-width: 700px;
+    margin: 0 auto;
+    height: 1px;
+    border: none;
+    display: block;
+    background-color: rgba(220, 222, 222, 1.00);
+    margin: 22px auto 32px auto;
+  }
+
+  ul {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  ol {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    li {
+      padding-left: 20px;
+    }
+  }
+
+  blockquote {
+    p {
+      border-left: 5px solid rgba(171, 205, 253, 0.4);
+      font-style: italic;
+      padding-left: 20px;
     }
   }
 
@@ -46,12 +91,12 @@ export const Content = styled.div`
   }
 
   a {
-    color: #ef3b7d;
+    color: #ABCDFD;
     padding: 2px 0 0px 0;
     text-decoration: none;
 
     &:hover {
-      border-bottom: 1px dotted #ef3b7d;
+      border-bottom: 1px dotted #ABCDFD;
     }
   }
 `;
