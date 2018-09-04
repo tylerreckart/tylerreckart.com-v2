@@ -4,6 +4,11 @@
   "version": "1.0.0",
   "author": "Tyler Reckart <tyler.reckart@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.2",
+    "add": "^2.0.6",
     "apollo-cache-inmemory": "^1.1.5",
     "apollo-client": "^2.2.0",
     "apollo-link-http": "^1.3.2",
@@ -39,7 +44,8 @@
     "react-apollo": "^2.0.4",
     "react-helmet": "^5.2.0",
     "sankey": "^2.0.2",
-    "styled-components": "^2.4.0"
+    "styled-components": "^2.4.0",
+    "yarn": "^1.9.4"
   },
   "keywords": [
     "gatsby"

@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import './index.css';
 import './prism.css';
+
+const Template = styled.div`
+  display: flex;
+  max-width: 1100px;
+  margin: 1em auto;
+`;
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -18,20 +26,23 @@ const TemplateWrapper = ({ children }) => (
     >
       <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
-      <link href="./node_modules/c3/c3.min.css" rel="stylesheet" />
-      <script src="./node_modules/d3/dist/d3.min.js" type="text/javascript"></script>
     </Helmet>
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: '1000px',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-    <Footer />
+    {/* <Header /> */}
+    <Template>
+      <Sidebar />
+      <div
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginTop: 0,
+          marginBottom: 0,
+          maxWidth: '800px',
+          position: 'relative',
+        }}
+      >
+        {children()}
+      </div>
+    </Template>
   </div>
 );
 

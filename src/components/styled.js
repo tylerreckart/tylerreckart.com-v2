@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   div {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 800px;
   }
 
   p {
@@ -20,7 +20,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 30px;
   max-width: 700px;
@@ -32,8 +32,10 @@ export const Content = styled.div`
     overflow: visible;
 
     code {
-      background-color: rgba(171, 205, 253, 0.4);
-      padding: 0 4px;
+      color: #0000EE;
+      background-color: #DBE5EA;
+      padding: 0 4px 1px 4px;
+      border-radius: 2px;
     }
 
     img {
@@ -44,17 +46,6 @@ export const Content = styled.div`
   sup {
     font-family: sans-serif;
     font-size: 10px;
-  }
-
-  a.gatsby-resp-image-link {
-    min-width: 1000px;
-    position: relative;
-    left: -50%;
-    transform: translateX(20%);
-
-    &:hover {
-      border: none;
-    }
   }
 
   @media (max-width: 1040px) {
@@ -101,9 +92,14 @@ export const Content = styled.div`
 
   blockquote {
     p {
-      border-left: 5px solid rgba(171, 205, 253, 0.4);
+      border-left: 2px solid #0000EE;
       font-style: italic;
       padding-left: 20px;
+
+      span {
+        font-size: 12px;
+        color: #8194A4;
+      }
     }
   }
 
@@ -116,16 +112,6 @@ export const Content = styled.div`
     max-width: 700px;
     margin: 0 auto;
   }
-
-  a {
-    color: #ABCDFD;
-    padding: 2px 0 0px 0;
-    text-decoration: none;
-
-    &:hover {
-      border-bottom: 1px dotted #ABCDFD;
-    }
-  }
 `;
 
 export const Date = styled.h3`
@@ -133,40 +119,38 @@ export const Date = styled.h3`
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-  max-width: 700px;
   padding: 0;
+  display: inline;
+  margin: 0 0 0 0.5em;
 
   a {
     color: #ef3b7d;
     padding: 0 8px;
-    text-decoration: none;
   }
+`;
+
+export const HomeLink = styled.h3`
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  display: inline;
 `;
 
 export const LinkTitle = styled.h2`
-  margin: 0 0 .5em 0;
   padding: 0;
-
-  a {
-    font-weight: bold !important;
-  }
+  display: inline;
 `;
 
 export const Title = styled.h2`
-  color: #000000;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: 0.01em;
-  margin: 0 0 .5em 0;
   padding: 0;
-  max-width: 700px;
+  display: inline;
 `;
 
 export const TitleWrapper = styled.div`
   max-width: 700px !important;
   margin: 0 auto !important;
-
-  @media (max-width: 700px) {
-    padding: 0;
-  }
 `;

@@ -4,7 +4,7 @@ date: "2018-06-21T17:12:33.962Z"
 title: "Speaking Elvish"
 ---
 
-One of my passions in programming is for the console. Yes, the dim, graphically uninteresting block hole of the command-line. As a software developer, nearly all of my work is done inside of a terminal window. Aside from the occasional foray into [VS Code](https://code.visualstudio.com/), most of my work is done on or around the command-line. This encompasses everything from running and inspecting local Docker containers to UI development with React in vim. Because of this, I tend to think a lot about how to extend and customize the terminal. Particularly about how to make my work more productive and enjoyable.
+One of my passions in programming is for the console. Yes, the dim, graphically uninteresting block hole of the command-line. As a software developer, nearly all of my work is done inside of a terminal window. Aside from the occasional foray into [VS Code](https://code.visualstudio.com/), it's where I spend my time. Everything from running and inspecting local Docker containers to UI development with React in vim happens in a terminal window. Because of this, I'm always on the lookout for new tools, and, I tend to think a lot about how to extend and customize the terminal. Particularly about how to make my work more productive and enjoyable.
 
 For the past few years, `zsh` has been my default login shell of choice. As a devout Unix user, the z shell is a fairly easy choice when it comes to an easy to use and extensible bash alternative. I've even gone so far as to develop my own themes to further customize my shell. [One of those themes](https://github.com/tylerreckart/hyperzsh) has even gained a little popularity over the years.
 
@@ -30,4 +30,4 @@ With that being said, so far I am very happy with Elvish, and if this sort of th
 
 ***
 
-1. **<span id="1">Gondolin</span>** was a city in the J. R. R. Tolkien [legendarium](https://en.wikipedia.org/wiki/Tolkien%27s_legendarium), founded by the Elves. Found and founded with divine inspiration, it is hidden by mountains and endures for centuries before being betrayed and destroyed.
+1. **<span id="1">Gondolin</span>** was a city in the J. R. R. Tolkien [legendarium](https://en.wikipedia.org/wiki/Tolkien%27s_legendarium), founded by the Elves. Found and founded with divine inspiration, it was hidden by mountains and endures for centuries before being betrayed and destroyed.
