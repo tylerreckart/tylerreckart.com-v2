@@ -12,7 +12,7 @@ import './prism.css';
 const Template = styled.div`
   display: flex;
   max-width: 1100px;
-  margin: 2em auto;
+  margin: 1em auto;
 `;
 
 const TemplateWrapper = ({ children, location }) => (
@@ -27,6 +27,7 @@ const TemplateWrapper = ({ children, location }) => (
       <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
     </Helmet>
+    {/* <Header /> */}
     <Template>
       <Sidebar />
       <div

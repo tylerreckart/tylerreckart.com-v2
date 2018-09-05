@@ -6,14 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faMailBulk, faUserAstronaut, faRss } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithub } from '@fortawesome/fontawesome-free-brands';
 
+import partyWizard from '../../party-wizard.gif';
 import Archive from '../Archive';
+import Footer from '../Footer';
 
 library.add(faHome, faMailBulk, faTwitter, faGithub, faUserAstronaut, faRss);
 
 const Sidebar = styled.div`
   font-size: 14px;
   width: 320px;
-  position: relative;
 
   p {
     margin: 0 0 .2em 0;
@@ -32,17 +33,23 @@ const Sidebar = styled.div`
   h4 {
     margin: 2em 0 .25em 0;
   }
+
+  .intro {
+    margin: 0 0 2em 0;
+  }
 `;
 
 export default () => (
   <Sidebar>
-    <p>I'm <strong>Tyler Reckart</strong>; a <a href="https://github.com/tylerreckart" target="_blank">software developer</a> at <a href="https://boomtownroi.com" target="_blank">BoomTown</a> focusing on front end architecture and design.</p>
+    <div className="intro">
+      <p>I'm <strong>Tyler Reckart</strong>; a <a href="https://github.com/tylerreckart" target="_blank">software developer</a>, <a href="https://dribbble.com/tylerreckart" target="_blank">occasional designer</a>, and watch geek. <img src={partyWizard} width="16px" height="16px" /></p>
+    </div>
 
     <nav>
       <ul>
         <li><FontAwesomeIcon icon="home" /> <Link to="/">Home</Link> <PageIndicator pathname="" /></li>
         <li><FontAwesomeIcon icon="user-astronaut" /> <Link to="/about">About</Link> <PageIndicator pathname="about" /></li>
-        <li><FontAwesomeIcon icon="mail-bulk" /> <a href="mailto:tyler@tylerreckart.com">tyler@tylerreckart.com</a></li>
+        {/* <li><FontAwesomeIcon icon="mail-bulk" /> <a href="mailto:tyler@tylerreckart.com">tyler@tylerreckart.com</a></li> */}
         <li><FontAwesomeIcon icon={['fab', 'github']} /> <a href="https://github.com/tylerreckart" target="_blank">Github</a></li>
         <li><FontAwesomeIcon icon={['fab', 'twitter']} /> <a href="https://twitter.com/tylerreckart" target="_blank">@tylerreckart</a></li>
         <li><FontAwesomeIcon icon="rss"/> <a href="#" target="_blank">RSS Feed</a></li>
@@ -51,15 +58,17 @@ export default () => (
 
     <h4>Projects</h4>
     <ul>
-      <li><a href="#" target="_blank">GraphQL In Motion</a>, a comprehensive video course that covers the fundementals of building, deploying, and scaling a GraphQL API.</li>
-      <li><a href="#" target="_blank">Hyperzsh</a>, a z shell theme designed to complement a git-focused workflow.</li>
+      <li><a href="https://www.manning.com/livevideo/graphql-in-motion" target="_blank">GraphQL In Motion</a>, a comprehensive video course that covers the fundementals of building, deploying, and scaling a GraphQL API.</li>
+      <li><a href="https://github.com/tylerreckart/hyperzsh" target="_blank">Hyperzsh</a>, a z shell theme designed to complement a git-focused workflow.</li>
     </ul>
 
     <h4 style={{ display: 'inline-block' }}>Consulting</h4> <PageIndicator pathname="consulting" />
     <p><Link to="/consulting">Click here</Link> to learn about my consulting services.</p>
 
     <h4 style={{ display: 'inline-block' }}>Archive</h4>
-    <Archive/>
+    <Archive />
+
+    <Footer />
   </Sidebar>
 );
 
@@ -79,4 +88,3 @@ const PageIndicator = props => {
 
   return null;
 };
-

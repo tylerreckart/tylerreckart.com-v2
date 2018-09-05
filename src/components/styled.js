@@ -25,6 +25,11 @@ export const Content = styled.div`
   line-height: 30px;
   max-width: 700px;
 
+  div.blog-post-content > p:last-of-type {
+    background-color: red;
+    padding-bottom: 0;
+  }
+
   p {
     max-width: 700px;
     margin: 0 auto;
@@ -32,15 +37,19 @@ export const Content = styled.div`
     overflow: visible;
 
     code {
-      color: #0000EE !important;
-      background-color: #DBE5EA !important;
+      color: #ef3b7d !important;
+      font-weight: 300;
+      background-color: #fff !important;
       padding: 0 4px 1px 4px !important;
-      border-radius: 2px !important;
     }
 
     img {
       width: 100%;
     }
+  }
+
+  .gatsby-resp-image-link {
+    border: none;
   }
 
   sup {
@@ -71,7 +80,7 @@ export const Content = styled.div`
     border: none;
     display: block;
     background-color: rgba(220, 222, 222, 1.00);
-    margin: 22px auto 32px auto;
+    margin: 1em auto 1em auto;
   }
 
   ul {
@@ -92,7 +101,7 @@ export const Content = styled.div`
 
   blockquote {
     p {
-      border-left: 1px solid #0000EE;
+      border-left: 1px dotted #0000EE;
       font-style: italic;
       padding-left: 20px;
 
@@ -117,8 +126,7 @@ export const Content = styled.div`
 export const Date = styled.h3`
   font-size: 14px !important;
   color: #8194A4;
-  font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   display: inline;
@@ -142,11 +150,12 @@ export const LinkTitle = styled.h2`
   font-size: 14px !important;
   padding: 0;
   display: inline;
+  font-weight: 300;
 `;
 
 export const Title = styled.h2`
   font-size: 14px !important;
-  font-weight: bold;
+  font-weight: 300;
   letter-spacing: 0.01em;
   padding: 0;
   display: inline;
