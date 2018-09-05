@@ -16,3 +16,17 @@ export default () => (
     </Container>
   </Layout>
 );
+
+// query postByDate {
+//   markdownRemark(
+//     frontmatter: {
+//       date: { eq: "2018-06-21T17:12:33.962Z" }
+//     }
+//   ) {
+//     frontmatter {
+//       title
+//       date(formatString: "MMMM Do YYYY")
+//     }
+//     excerpt(pruneLength: 250)
+//   }
+// }

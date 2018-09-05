@@ -32,10 +32,10 @@ export const Content = styled.div`
     overflow: visible;
 
     code {
-      color: #0000EE;
-      background-color: #DBE5EA;
-      padding: 0 4px 1px 4px;
-      border-radius: 2px;
+      color: #0000EE !important;
+      background-color: #DBE5EA !important;
+      padding: 0 4px 1px 4px !important;
+      border-radius: 2px !important;
     }
 
     img {
@@ -92,7 +92,7 @@ export const Content = styled.div`
 
   blockquote {
     p {
-      border-left: 2px solid #0000EE;
+      border-left: 1px solid #0000EE;
       font-style: italic;
       padding-left: 20px;
 
@@ -115,6 +115,7 @@ export const Content = styled.div`
 `;
 
 export const Date = styled.h3`
+  font-size: 14px !important;
   color: #8194A4;
   font-size: 16px;
   font-weight: 400;
@@ -130,7 +131,7 @@ export const Date = styled.h3`
 `;
 
 export const HomeLink = styled.h3`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -138,12 +139,13 @@ export const HomeLink = styled.h3`
 `;
 
 export const LinkTitle = styled.h2`
+  font-size: 14px !important;
   padding: 0;
   display: inline;
 `;
 
 export const Title = styled.h2`
-  font-size: 16px;
+  font-size: 14px !important;
   font-weight: bold;
   letter-spacing: 0.01em;
   padding: 0;

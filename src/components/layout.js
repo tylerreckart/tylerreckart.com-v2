@@ -12,10 +12,10 @@ import './prism.css';
 const Template = styled.div`
   display: flex;
   max-width: 1100px;
-  margin: 1em auto;
+  margin: 2em auto;
 `;
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, location }) => (
   <div>
     <Helmet
       title="Tyler Reckart"
@@ -27,7 +27,6 @@ const TemplateWrapper = ({ children }) => (
       <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
     </Helmet>
-    {/* <Header /> */}
     <Template>
       <Sidebar />
       <div
@@ -40,7 +39,7 @@ const TemplateWrapper = ({ children }) => (
           position: 'relative',
         }}
       >
-        {children()}
+        {children}
       </div>
     </Template>
   </div>
