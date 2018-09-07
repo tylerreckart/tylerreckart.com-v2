@@ -14,7 +14,7 @@ library.add(faHome, faMailBulk, faTwitter, faGithub, faUserAstronaut, faRss);
 
 const Sidebar = styled.div`
   font-size: 14px;
-  width: 320px;
+  flex-basis: 30%;
 
   p {
     margin: 0 0 .2em 0;
@@ -37,10 +37,31 @@ const Sidebar = styled.div`
   .intro {
     margin: 0 0 2em 0;
   }
+
+  .hr {
+    display: none;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  @media screen and (max-width: 960px) {
+    flex-basis: 35%;
+    margin-right: 2em;
+  }
+
+  @media screen and (max-width: 760px) {
+    max-width: 800px !important;
+    margin: 0 1em;
+
+    .hr {
+      display: block;
+    }
+  }
 `;
 
 export default () => (
-  <Sidebar>
+  <Sidebar className="sidebar">
+    <div className="hr">***</div>
     <div className="intro">
       <p>I'm <strong>Tyler Reckart</strong>; a <a href="https://github.com/tylerreckart" target="_blank">software developer</a>, <a href="https://dribbble.com/tylerreckart" target="_blank">occasional designer</a>, and watch geek. <img src={partyWizard} width="16px" height="16px" /></p>
     </div>
@@ -62,11 +83,11 @@ export default () => (
       <li><a href="https://github.com/tylerreckart/hyperzsh" target="_blank">Hyperzsh</a>, a z shell theme designed to complement a git-focused workflow.</li>
     </ul>
 
-    <h4 style={{ display: 'inline-block' }}>Consulting</h4> <PageIndicator pathname="consulting" />
+    {/* <h4 style={{ display: 'inline-block' }}>Consulting</h4> <PageIndicator pathname="consulting" />
     <p><Link to="/consulting">Click here</Link> to learn about my consulting services.</p>
 
     <h4 style={{ display: 'inline-block' }}>Archive</h4>
-    <Archive />
+    <Archive /> */}
 
     <Footer />
   </Sidebar>

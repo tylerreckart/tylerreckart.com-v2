@@ -11,8 +11,13 @@ import './prism.css';
 
 const Template = styled.div`
   display: flex;
+  align-items: flex-start;
   max-width: 1100px;
   margin: 1em auto;
+
+  @media screen and (max-width: 760px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const TemplateWrapper = ({ children, location }) => (
