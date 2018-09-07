@@ -99,12 +99,15 @@ const Indicator = styled.span`
 `;
 
 const PageIndicator = props => {
-  const location = window.location.pathname.split('/');
+  let location;
+  if (typeof window !== 'undefined') {
+    location = window.location.pathname.split('/');
 
-  if (location[1] === props.pathname) {
-    return (
-      <Indicator>← You Are Here</Indicator>
-    );
+    if (location[1] === props.pathname) {
+      return (
+        <Indicator>← You Are Here</Indicator>
+      );
+    }
   }
 
   return null;
