@@ -73,7 +73,7 @@ export default () => (
         {/* <li><FontAwesomeIcon icon="mail-bulk" /> <a href="mailto:tyler@tylerreckart.com">tyler@tylerreckart.com</a></li> */}
         <li><FontAwesomeIcon icon={['fab', 'github']} /> <a href="https://github.com/tylerreckart" target="_blank">Github</a></li>
         <li><FontAwesomeIcon icon={['fab', 'twitter']} /> <a href="https://twitter.com/tylerreckart" target="_blank">@tylerreckart</a></li>
-        <li><FontAwesomeIcon icon="rss"/> <a href="#" target="_blank">RSS Feed</a></li>
+        {/* <li><FontAwesomeIcon icon="rss"/> <a href="#" target="_blank">RSS Feed</a></li> */}
       </ul>
     </nav>
 
