@@ -1,7 +1,9 @@
+<p align="center">
+  <img width="16" height="16" src="./src/party-wizard.gif">
+</p>
+
 # tylerreckart.com
 My personal website. There are many like it, but this one is mine. 
-
-![https://tylerreckart.com](./.github/preview.png)
 
 ### Install
 ```
