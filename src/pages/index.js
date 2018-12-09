@@ -1,14 +1,15 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import styled from 'styled-components';
 import moment from 'moment';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { Container, Content, Date, LinkTitle as Title, TitleWrapper } from '../components/styled';
+import { Container, Content, Date, LinkTitle as Title, TitleWrapper, TimeToRead } from '../components/styled';
 import Layout from '../components/layout';
+import { formatReadingTime } from '../utils/helpers';
 
 export default ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
+
   return (
     <Layout>
       <Container>
@@ -30,6 +31,9 @@ export default ({ data }) => {
                     <Date>
                       {moment(post.frontmatter.date).format('MMMM Do YYYY')}
                     </Date>
+                    <TimeToRead>
+                      {' ' + formatReadingTime(post.timeToRead)}
+                    </TimeToRead>
                 </TitleWrapper>
                 <Content dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
                 <div style={{ height: `1em`, width: `100%` }} />
@@ -52,6 +56,7 @@ export const postsQuery = graphql`
             excerpt(pruneLength: 250)
             html
             id
+            timeToRead
             frontmatter {
               date
               path

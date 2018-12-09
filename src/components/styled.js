@@ -155,7 +155,7 @@ export const LinkTitle = styled.h2`
 
 export const Title = styled.h2`
   font-size: 14px !important;
-  font-weight: 300;
+  font-weight: bold;
   letter-spacing: 0.01em;
   padding: 0;
   display: inline;
@@ -164,4 +164,10 @@ export const Title = styled.h2`
 export const TitleWrapper = styled.div`
   max-width: 700px !important;
   margin: 0 auto !important;
+`;
+
+export const TimeToRead = styled.div`
+  display: inline;
+  color: #8194A4;
+  font-size: 14px;
 `;

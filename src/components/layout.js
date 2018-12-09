@@ -11,13 +11,10 @@ import './prism.css';
 
 const Template = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   align-items: flex-start;
-  max-width: 1100px;
-  margin: 1em auto;
-
-  @media screen and (max-width: 760px) {
-    flex-direction: column-reverse;
-  }
+  max-width: 700px;
+  margin: 0 auto;
 `;
 
 const TemplateWrapper = ({ children, location }) => (
@@ -32,7 +29,7 @@ const TemplateWrapper = ({ children, location }) => (
       <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
     </Helmet>
-    {/* <Header /> */}
+    <Header />
     <Template>
       <Sidebar />
       <div

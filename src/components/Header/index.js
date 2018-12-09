@@ -4,14 +4,27 @@ import Link from 'gatsby-link';
 import partyWizard from '../../party-wizard.gif';
 
 const Header = styled.header`
-  margin: 1em auto 0 auto;
-  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  margin: 4em auto;
+  max-width: 700px;
+
+  a {
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
 `;
 
 export default () => {
   return (
     <Header>
-      <img src={partyWizard} width="16px" height="16px" />
+      <Link to="/">
+        <img src={partyWizard} width="16px" height="16px" />
+      </Link>
     </Header>
   );
 };

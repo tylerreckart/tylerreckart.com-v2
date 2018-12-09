@@ -9,6 +9,7 @@ body {
   font-size: 14px;
   letter-spacing: 0.025em;
   line-height: 22px;
+  height: 100%;
 }
 
 * {

@@ -7,12 +7,14 @@ import Layout from '../components/layout';
 
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 
-import { Container, Content, Date, HomeLink, Title, TitleWrapper } from '../components/styled';
+import { Container, Content, Date, HomeLink, Title, TitleWrapper, TimeToRead } from '../components/styled';
+import { formatReadingTime } from '../utils/helpers';
 
 const Comments = styled.div`
   max-width: 700px !important;
-  margin: 0 auto !important;
+  margin: 0 auto;
   margin-top: 1em !important;
+  margin-bottom: 2em !important;
 
   @media (max-width: 700px) {
     padding: 0;
@@ -49,6 +51,9 @@ export default function Template({ data }) {
             <Date>
               {moment(post.frontmatter.date).format('MMMM Do YYYY')}
             </Date>
+            <TimeToRead>
+              {' ' + formatReadingTime(post.timeToRead)}
+            </TimeToRead>
           </div>
           <HomeLink><Link to="/">← Go Back</Link></HomeLink>
         </TitleWrapper>
@@ -68,6 +73,7 @@ export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      timeToRead
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

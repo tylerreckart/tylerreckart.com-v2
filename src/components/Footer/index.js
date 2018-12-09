@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Footer = styled.footer`
   color: #8194A4;
   font-size: 12px;
-  margin-top: 2em;
+  margin: 4em 0;
 `;
 
 export default () => (
