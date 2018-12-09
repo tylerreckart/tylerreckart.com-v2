@@ -4,7 +4,7 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import moment from 'moment';
 import Layout from '../components/layout';
-
+import { graphql } from 'gatsby';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 
 import { Container, Content, Date, HomeLink, Title, TitleWrapper, TimeToRead } from '../components/styled';
