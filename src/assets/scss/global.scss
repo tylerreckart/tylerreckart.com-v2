@@ -26,10 +26,10 @@ a {
   color: blue;
   border-bottom: 1px dotted blue;
   text-decoration: none;
-}
 
-a:hover {
-  border-bottom: 1px solid blue;
+  &:hover {
+    border-bottom: 1px solid blue;
+  }
 }
 
 div.blog-post-content > p:last-of-type {

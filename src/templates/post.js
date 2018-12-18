@@ -1,25 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Link from 'gatsby-link';
-import styled from 'styled-components';
 import moment from 'moment';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
-
-import { Container, Content, Date, HomeLink, Title, TitleWrapper, TimeToRead } from '../components/styled';
 import { formatReadingTime } from '../utils/helpers';
-
-const Comments = styled.div`
-  max-width: 700px !important;
-  margin: 0 auto;
-  margin-top: 1em !important;
-  margin-bottom: 2em !important;
-
-  @media (max-width: 700px) {
-    padding: 0;
-  }
-`;
 
 export default function Template({ data }) {
   const initDisqusScript = () => {
@@ -39,32 +25,32 @@ export default function Template({ data }) {
   const { markdownRemark: post } = data;
   return (
     <Layout>
-      <Container>
+      <div id="container">
         <Helmet title={`Tyler Reckart - ${post.frontmatter.title}`} />
-        <TitleWrapper
+        <div className="title-wrapper"
           style={{
             display: 'flex',
             justifyContent: 'space-between',
           }}>
           <div style={{ margin: 0 }}>
-            <Title>{post.frontmatter.title}</Title>
-            <Date>
+            <h2 className="post-title">{post.frontmatter.title}</h2>
+            <h3 className="date">
               {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-            </Date>
-            <TimeToRead>
+            </h3>
+            <h3 className="reading-time">
               {' ' + formatReadingTime(post.timeToRead)}
-            </TimeToRead>
+            </h3>
           </div>
-          <HomeLink><Link to="/">← Go Back</Link></HomeLink>
-        </TitleWrapper>
-        <Content
-          className="blog-post-content"
+          <h3 className="home-link"><Link to="/">← Go Back</Link></h3>
+        </div>
+        <article
+          id="article-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <Comments>
+        <div id="comments">
           {canUseDOM ? initDisqusScript() : null}
-        </Comments>
-      </Container>
+        </div>
+      </div>
     </Layout>
   );
 }

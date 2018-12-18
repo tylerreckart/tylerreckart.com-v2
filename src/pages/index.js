@@ -2,8 +2,6 @@ import React from 'react';
 import Link from 'gatsby-link';
 import moment from 'moment';
 import { graphql } from 'gatsby';
-
-import { Container, Content, Date, LinkTitle as Title, TitleWrapper, TimeToRead } from '../components/styled';
 import Layout from '../components/layout';
 import { formatReadingTime } from '../utils/helpers';
 
@@ -12,14 +10,14 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <Container>
+      <div id="container">
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
-              <div className="blog-post" key={post.id}>
-                <TitleWrapper>
-                    <Title>
+              <div id="post-wrapper" key={post.id}>
+                <div className="title-wrapper">
+                    <h2 className="link-title">
                       <Link
                         to={post.frontmatter.path}
                         style={{
@@ -27,20 +25,21 @@ export default ({ data }) => {
                         }}>
                         {post.frontmatter.title}
                       </Link>
-                    </Title>
-                    <Date>
+                    </h2>
+                    <h3 className="date">
                       {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-                    </Date>
-                    <TimeToRead>
+                    </h3>
+                    <h3 className="reading-time">
                       {' ' + formatReadingTime(post.timeToRead)}
-                    </TimeToRead>
-                </TitleWrapper>
-                <Content dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
+                    </h3>
+                </div>
+                <article id="article-body" dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
+
                 <div style={{ height: `1em`, width: `100%` }} />
               </div>
             );
           })}
-      </Container>
+      </div>
     </Layout>
   );
 };

@@ -1,23 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
 
 import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
+import NavMenu from '../components/NavMenu';
 import Footer from '../components/Footer';
-import './index.css';
-import './prism.css';
+import '../assets/scss/main.scss';
 
-const Template = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-  max-width: 700px;
-  margin: 0 auto;
-`;
-
-const TemplateWrapper = ({ children, location }) => (
+const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
       title="Tyler Reckart"
@@ -30,8 +20,7 @@ const TemplateWrapper = ({ children, location }) => (
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
     </Helmet>
     <Header />
-    <Template>
-      <Sidebar />
+    <div id="template">
       <div
         style={{
           marginLeft: 'auto',
@@ -44,7 +33,9 @@ const TemplateWrapper = ({ children, location }) => (
       >
         {children}
       </div>
-    </Template>
+      <NavMenu />
+      <Footer />
+    </div>
   </div>
 );
 
