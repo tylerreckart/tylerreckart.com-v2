@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 import { formatReadingTime } from '../utils/helpers';
+import { MDXRenderer } from 'gatsby-mdx';
 
 export default function Template({ data }) {
   const initDisqusScript = () => {
@@ -22,7 +23,8 @@ export default function Template({ data }) {
     );
   };
 
-  const { markdownRemark: post } = data;
+  const { mdx: post } = data;
+  console.log(post);
   return (
     <Layout>
       <div id="container">
@@ -43,10 +45,7 @@ export default function Template({ data }) {
           </div>
           <h3 className="home-link"><Link to="/">← Go Back</Link></h3>
         </div>
-        <article
-          id="article-body"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <MDXRenderer className="template-body">{post.code.body}</MDXRenderer>
         <div id="comments">
           {canUseDOM ? initDisqusScript() : null}
         </div>
@@ -56,15 +55,17 @@ export default function Template({ data }) {
 }
 
 export const postQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      timeToRead
+  query MDXForPost($path: String!) {
+    mdx(frontmatter: { path: { eq: $path } }) {
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
         title
+        path
+        date
       }
+      code {
+        body
+      }
+      timeToRead
     }
   }
 `;

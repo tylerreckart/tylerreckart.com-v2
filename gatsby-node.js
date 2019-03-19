@@ -6,15 +6,15 @@ exports.createPages = ({ actions, graphql }) => {
   const blogPostTemplate = path.resolve(`src/templates/post.js`);
 
   return graphql(`{
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
+    allMdx(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
       edges {
         node {
           excerpt(pruneLength: 250)
-          html
           id
+          timeToRead
           frontmatter {
             date
             path
@@ -28,8 +28,9 @@ exports.createPages = ({ actions, graphql }) => {
       if (result.errors) {
         return Promise.reject(result.errors);
       }
+      console.log(result);
 
-      result.data.allMarkdownRemark.edges
+      result.data.allMdx.edges
         .forEach(({ node }) => {
           createPage({
             path: node.frontmatter.path,

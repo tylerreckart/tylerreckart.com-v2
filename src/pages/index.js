@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import { formatReadingTime } from '../utils/helpers';
 
 export default ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark;
+  const { edges: posts } = data.allMdx;
 
   return (
     <Layout>
@@ -46,23 +46,22 @@ export default ({ data }) => {
 
 export const postsQuery = graphql`
   query allPosts {
-    allMarkdownRemark(
+    allMdx(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
-        edges {
-          node {
-            excerpt(pruneLength: 250)
-            html
-            id
-            timeToRead
-            frontmatter {
-              date
-              path
-              title
-            }
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          timeToRead
+          frontmatter {
+            date
+            path
+            title
           }
         }
       }
+    }
   }
 `;
