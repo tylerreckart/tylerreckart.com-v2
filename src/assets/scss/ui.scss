@@ -25,11 +25,23 @@
   &.left {
     float: left;
     margin-right: 24px;
+
+    @media (max-width: 700px) {
+      float: none;
+      margin-right: 0;
+      margin: 0 auto;
+    }
   }
 
   &.right {
     float: right;
     margin-left: 24px;
+
+    @media (max-width: 700px) {
+      float: none;
+      margin-left: 0;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -49,18 +61,15 @@
   }
 }
 
+.image-source {
+  margin-top: 8px;
+}
+
 #container {
+  max-width: 700px;
+
   @media (max-width: 700px) {
     margin: 0 1em;
-  }
-
-  & > div {
-    p {
-      margin: 0 auto 1em auto;
-      max-width: 700px;
-      letter-spacing: 0.025em;
-      line-height: 26px;
-    }
   }
 
   p {
@@ -70,14 +79,27 @@
   }
 }
 
+a {
+  color: #176ABB;
+}
+
+.project-list > li {
+  line-height: 28px;
+}
+
 #article-body {
   font-size: 14px;
   font-weight: 400;
-  line-height: 30px;
-  max-width: 700px;
+  line-height: 28px;
+
+  pre {
+    color: #176ABB;
+    max-width: 700px;
+    overflow-x: scroll;
+  }
 
   p {
-    padding: .75em 0;
+    padding-bottom: 8px;
     overflow: visible;
 
     code {
@@ -118,7 +140,7 @@
 
   blockquote {
     p {
-      border-left: 1px dotted #0000EE;
+      border-left: 1px dotted #176ABB;
       font-style: italic;
       padding-left: 20px;
 
@@ -147,6 +169,10 @@
   h6 {
     max-width: 700px;
     margin: 0 auto;
+  }
+
+  h3 {
+    margin-top: 14px;
   }
 
   .gatsby-resp-image-link {
@@ -189,15 +215,38 @@
 
 .link-title,
 .post-title {
-  display: inline;
   font-size: 14px;
   font-weight: 300;
   padding: 0;
+  display: block;
+
+  @media (min-width: 700px) {
+    display: inline;
+  }
 }
 
 .post-title {
   letter-spacing: 0.01em;
   font-weight: bold;
+  margin: 0;
+  display: block;
+
+  @media (min-width: 700px) {
+    display: inline;
+  }
+}
+
+.date {
+  color: #8194A4;
+  display: inline;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0 0 0 10px;
+  padding: 0;
+
+  @media (max-width: 700px) {
+    margin: 0;
+  }
 }
 
 .title-wrapper {
@@ -214,6 +263,7 @@
 }
 
 #nav-menu {
+  margin: 0 auto;
   font-size: 14px;
   max-width: 700px;
 
@@ -273,7 +323,7 @@
 #footer {
   color: #8194a4;
   font-size: 12px;
-  margin: 4em 0;
+  margin: 48px auto;
 }
 
 #comments {

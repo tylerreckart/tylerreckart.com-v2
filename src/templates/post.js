@@ -45,7 +45,9 @@ export default function Template({ data }) {
           </div>
           <h3 className="home-link"><Link to="/">← Go Back</Link></h3>
         </div>
-        <MDXRenderer className="template-body">{post.code.body}</MDXRenderer>
+        <article id="article-body">
+          <MDXRenderer>{post.code.body}</MDXRenderer>
+        </article>
         <div id="comments">
           {canUseDOM ? initDisqusScript() : null}
         </div>

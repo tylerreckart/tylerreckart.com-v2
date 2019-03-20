@@ -16,7 +16,7 @@ export default ({ data }) => {
           .map(({ node: post }) => {
             return (
               <div id="post-wrapper" key={post.id}>
-                <div className="title-wrapper">
+                <div className="post-title-wrapper">
                     <h2 className="link-title">
                       <Link
                         to={post.frontmatter.path}

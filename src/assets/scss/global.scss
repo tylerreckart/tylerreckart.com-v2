@@ -23,12 +23,12 @@ code {
 }
 
 a {
-  color: blue;
-  border-bottom: 1px dotted blue;
+  color: #176ABB;
+  border-bottom: 1px dotted #176ABB;
   text-decoration: none;
 
   &:hover {
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid #176ABB;
   }
 }
 
