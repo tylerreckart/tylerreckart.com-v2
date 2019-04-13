@@ -12,8 +12,9 @@ const TemplateWrapper = ({ children }) => (
     <Helmet
       title="Tyler Reckart"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'author', content: 'Tyler Reckart' },
+        { name: 'description', content: 'Software and watches, among other things.' },
+        { name: 'keywords', content: 'javascript, haskell, graphql, software, watches, horology' },
       ]}
     >
       <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
