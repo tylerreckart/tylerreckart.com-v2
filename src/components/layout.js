@@ -22,16 +22,7 @@ const TemplateWrapper = ({ children }) => (
     </Helmet>
     <Header />
     <div id="template">
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          marginTop: 0,
-          marginBottom: 0,
-          maxWidth: '800px',
-          position: 'relative',
-        }}
-      >
+      <div id="content-wrapper">
         {children}
       </div>
       <NavMenu />
