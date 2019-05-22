@@ -23,7 +23,7 @@
     "fbjs": "^0.8.16",
     "fs": "^0.0.1-security",
     "gatsby": "^2.0.64",
-    "gatsby-link": "^2.0.7",
+    "gatsby-link": "^2.1.1",
     "gatsby-mdx": "^0.4.3",
     "gatsby-paginate": "^1.0.17",
     "gatsby-plugin-catch-links": "^2.0.9",

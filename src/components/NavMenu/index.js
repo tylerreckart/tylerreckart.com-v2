@@ -3,7 +3,6 @@ import Link from 'gatsby-link';
 
 export default () => (
   <div id="nav-menu">
-    <div className="separator">***</div>
     <div className="intro">
       <p>I'm <strong>Tyler Reckart</strong>; a <a href="https://github.com/tylerreckart" target="_blank">software developer</a>, <a href="https://dribbble.com/tylerreckart" target="_blank">occasional designer</a>, and watch geek.</p>
     </div>
