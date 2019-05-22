@@ -24,7 +24,7 @@ export default function Template({ data }) {
   };
 
   const { mdx: post } = data;
-  console.log(post);
+
   return (
     <Layout>
       <div id="container">

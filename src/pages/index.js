@@ -7,12 +7,19 @@ import { formatReadingTime } from '../utils/helpers';
 
 export default ({ data }) => {
   const { edges: posts } = data.allMdx;
+  const path = window.location.pathname.replace('/' , '');
+  const page = parseInt(path.replace('/', ''), 10);
+  const currentPage = Number.isNaN(page) ? 1 : page;
+  const pageCount = Math.round(posts.length / 4);
+  const sliceStart = currentPage === 1 ? 0 : (currentPage * 4) - 4;
+  const sliceEnd = currentPage === 1 ? 4 : currentPage * 4;
 
   return (
     <Layout>
       <div id="container">
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
+          .slice(sliceStart, sliceEnd)
           .map(({ node: post }) => {
             return (
               <div id="post-wrapper" key={post.id}>
@@ -39,6 +46,33 @@ export default ({ data }) => {
               </div>
             );
           })}
+          <div className="pagination-container">
+            <button
+              type="button"
+              onClick={() => {
+                const nextPage = currentPage - 1;
+
+                const origin = window.location.origin;
+                if (nextPage === 1) {
+                  window.location.replace(origin);
+                } else {
+                  window.location.replace(`${origin}/${currentPage - 1}`);
+                }
+              }}
+              disabled={currentPage - 1 === 0}
+            >
+              Prev
+            </button>
+            <span className="page-count">{currentPage} of {pageCount}</span>
+            <button
+              type="button"
+              onClick={() => {
+                const origin = window.location.origin;
+                window.location.replace(`${origin}/${currentPage + 1}`);
+              }}
+              disabled={currentPage + 1 > pageCount}
+            >Next</button>
+          </div>
       </div>
     </Layout>
   );
