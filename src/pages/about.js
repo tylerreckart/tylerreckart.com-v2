@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 
 export default () => (
   <Layout>
-    <div id="container">
+    <div id="container" className="about-page-wrapper">
       <div
         className="page-title-wrapper"
         style={{

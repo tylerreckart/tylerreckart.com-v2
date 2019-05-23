@@ -247,8 +247,21 @@ a {
   }
 }
 
+.about-page-wrapper {
+  margin-bottom: 36px;
+}
+
 .post-title-wrapper {
   margin-bottom: 8px;
+}
+
+.page-title-wrapper {
+  margin-bottom: 16px;
+}
+
+.page-title-wrapper > .title {
+  margin: 0;
+  font-size: 16px;
 }
 
 .post-title {
