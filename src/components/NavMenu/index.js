@@ -18,8 +18,8 @@ export default () => (
 
     <h4>Projects</h4>
     <ul className="project-list">
-      <li><a href="https://www.manning.com/livevideo/graphql-in-motion" target="_blank">GraphQL In Motion</a>: A comprehensive video course with over two and a half hours of content and more than 30 exercises that covers the fundementals of building, deploying, and scaling a GraphQL API.</li>
-      <li><a href="https://github.com/tylerreckart/hyperzsh" target="_blank">Hyperzsh</a>: A z shell theme designed to complement a git-focused workflow.</li>
+      <li><a href="https://www.manning.com/livevideo/graphql-in-motion" target="_blank">GraphQL In Motion</a>: A comprehensive video course with over two and a half hours of content and 28 exercises that cover the fundementals of building, deploying, and scaling a GraphQL API.</li>
+      <li><a href="https://github.com/tylerreckart/hyperzsh" target="_blank">Hyperzsh</a>: A zsh shell prompt designed to complement a git-focused workflow.</li>
     </ul>
   </div>
 );
