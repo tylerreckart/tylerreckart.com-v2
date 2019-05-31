@@ -6,7 +6,7 @@ export default () => {
   return (
     <div id="header">
       <Link to="/">
-        <img src={partyWizard} width="16px" height="16px" />
+        <img src={partyWizard} width="64px" height="64px" />
       </Link>
     </div>
   );
