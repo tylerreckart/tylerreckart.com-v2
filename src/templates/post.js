@@ -5,7 +5,6 @@ import moment from 'moment';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
-import { formatReadingTime } from '../utils/helpers';
 import { MDXRenderer } from 'gatsby-mdx';
 
 export default function Template({ data }) {
@@ -38,9 +37,6 @@ export default function Template({ data }) {
             <h2 className="post-title">{post.frontmatter.title}</h2>
             <h3 className="date">
               {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-            </h3>
-            <h3 className="reading-time">
-              {' ' + formatReadingTime(post.timeToRead)}
             </h3>
           </div>
           <h3 className="home-link"><Link to="/">← Go Back</Link></h3>

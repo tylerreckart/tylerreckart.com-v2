@@ -43,6 +43,7 @@ class Index extends React.Component {
     const sliceStart = currentPage === 1 ? 0 : (currentPage * 4) - 4;
     const sliceEnd = currentPage === 1 ? 4 : currentPage * 4;
     const sliceLength = posts.slice(sliceStart, sliceEnd).length;
+    console.log(this.props.data.allMdx);
 
     return (
       <Layout>
@@ -55,6 +56,9 @@ class Index extends React.Component {
                 <div className={`post-preview ${i === sliceLength - 1 ? 'last-of-type' : ''}`}>
                   <div id="post-wrapper" key={post.id}>
                     <div className="post-title-wrapper">
+                        <h3 className="date">
+                          {moment(post.frontmatter.date).format('MMMM Do YYYY')}
+                        </h3>
                         <h2 className="link-title">
                           <Link
                             to={post.frontmatter.path}
@@ -64,15 +68,10 @@ class Index extends React.Component {
                             {post.frontmatter.title}
                           </Link>
                         </h2>
-                        <h3 className="date">
-                          {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-                        </h3>
-                        <h3 className="reading-time">
-                          {' ' + formatReadingTime(post.timeToRead)}
-                        </h3>
                     </div>
                     <article id="article-body" dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
                   </div>
+                  <button type="button" className="continue-reading__button">Continue Reading</button>
                 </div>
               );
             })}
@@ -96,7 +95,7 @@ export const postsQuery = graphql`
       ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 750)
           id
           timeToRead
           frontmatter {
