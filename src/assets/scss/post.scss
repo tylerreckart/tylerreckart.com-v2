@@ -1,0 +1,181 @@
+//
+// Post UI
+//
+.post-preview {
+  margin-bottom: 64px;
+
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+//
+// Post content
+//
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+
+  .date {
+    margin: 0 0 10px 0;
+  }
+}
+
+.date {
+  color: #8194A4;
+  display: inline;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 0;
+}
+
+.link-title,
+.post-title {
+  font-size: 32px;
+  font-weight: 800;
+  padding: 0;
+  display: block;
+  margin: 0px 0 10px 0;
+
+  a {
+    color: #000000;
+  }
+}
+
+#article-body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 36px;
+  margin-bottom: 20px;
+
+  pre {
+    color: $primary;
+    overflow-x: scroll;
+    margin-bottom: 10px !important;
+  }
+
+  p {
+    margin-bottom: 8px !important;
+    overflow: visible;
+
+    code {
+      color: #ef3b7d !important;
+      font-weight: 300;
+      background-color: #fff !important;
+      padding: 0 4px 1px 4px !important;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  a {
+    display: inline;
+  }
+
+  hr {
+    height: 1px;
+    border: none;
+    display: block;
+    background-color: rgba(220, 222, 222, 1.00);
+    margin: 1em auto 1em auto;
+  }
+
+  ul {
+    padding: 0 20px;
+  }
+
+  ol {
+    padding: 0 20px;
+
+    li {
+      padding-left: 20px;
+    }
+  }
+
+  blockquote {
+    p {
+      border-left: 1px dotted #176ABB;
+      font-style: italic;
+      padding-left: 20px;
+
+      span {
+        font-size: 12px;
+        color: #8194A4;
+      }
+    }
+  }
+
+  sup {
+    font-family: sans-serif;
+    font-size: 10px;
+  }
+
+  p,
+  hr,
+  ul,
+  ol,
+  pre,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin-top: 14px;
+  }
+
+  .gatsby-resp-image-link {
+    border: none;
+    display: inline !important;
+  }
+
+  @media (max-width: 1040px) {
+    a.gatsby-resp-image-link {
+      min-width: 760px;
+      transform: translateX(42%);
+    }
+  }
+
+  @media (max-width: 800px) {
+    a.gatsby-resp-image-link {
+      min-width: 100%;
+      left: 0%;
+      transform: translateX(0%);
+    }
+  }
+}
+
+//
+// Images
+//
+.image-full,
+.image-wrap,
+.image-med {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  em {
+    color: #7D8691;
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+.image-wrap {
+  max-width: 300px;
+}
+
+.image-source {
+  margin-top: 28px;
+}

@@ -1,3 +1,6 @@
+$primary: #ED3372;
+$primaryMuted: #8194a4;
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -20,18 +23,4 @@ code {
     font-size: 95%;
     font-family: 'Space Mono', Menlo, Monaco, "Courier New", monospace !important;
     line-height: 22px;
-}
-
-a {
-  color: #176ABB;
-  border-bottom: none;
-  text-decoration: none;
-
-  // &:hover {
-  //   border-bottom: 1px solid #176ABB;
-  // }
-}
-
-div.blog-post-content > p:last-of-type {
-  padding-bottom: 0;
 }

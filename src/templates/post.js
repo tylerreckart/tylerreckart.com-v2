@@ -28,18 +28,14 @@ export default function Template({ data }) {
     <Layout>
       <div id="container">
         <Helmet title={`Tyler Reckart - ${post.frontmatter.title}`} />
-        <div className="title-wrapper"
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}>
-          <div style={{ margin: 0 }}>
-            <h2 className="post-title">{post.frontmatter.title}</h2>
+        <div className="post-header">
+          <div className="post-title-wrapper">
             <h3 className="date">
               {moment(post.frontmatter.date).format('MMMM Do YYYY')}
             </h3>
+            <h2 className="post-title">{post.frontmatter.title}</h2>
           </div>
-          <h3 className="home-link"><Link to="/">← Go Back</Link></h3>
+          <h3 className="back-button"><Link to="/">← Go Back</Link></h3>
         </div>
         <article id="article-body">
           <MDXRenderer>{post.code.body}</MDXRenderer>

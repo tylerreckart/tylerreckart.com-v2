@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Pagination from '../components/Pagination';
 import { formatReadingTime } from '../utils/helpers';
+import { MDXRenderer } from 'gatsby-mdx';
 
 class Index extends React.Component {
   constructor(props) {
@@ -70,6 +71,9 @@ class Index extends React.Component {
                         </h2>
                     </div>
                     <article id="article-body" dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
+                    {/* <article id="article-body">
+                      <MDXRenderer>{post.code.body}</MDXRenderer>
+                    </article> */}
                   </div>
                   <button type="button" className="continue-reading__button">Continue Reading</button>
                 </div>
@@ -96,6 +100,9 @@ export const postsQuery = graphql`
       edges {
         node {
           excerpt(pruneLength: 750)
+          code {
+            body
+          }
           id
           timeToRead
           frontmatter {
