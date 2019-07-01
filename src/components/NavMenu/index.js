@@ -22,13 +22,15 @@ export default class NavMenu extends React.Component {
         <nav>
           <ul>
             <li className={`${this.isCurrentRoute("") ? "active" : ""}`}>
-              <Link to="/">Home</Link>{" "}
+              <Link to="/">Home</Link>
+            </li>
+            <li className={`${this.isCurrentRoute("work") ? "active" : ""}`}>
+              <Link to="/work">Work</Link>
             </li>
             <li className={`${this.isCurrentRoute("about") ? "active" : ""}`}>
-              <Link to="/about">About</Link>{" "}
+              <Link to="/about">About</Link>
             </li>
             <li>
-              {/*👨‍💻*/}{" "}
               <a href="https://github.com/tylerreckart" target="_blank">
                 <GithubIcon /> <span>Github</span>
               </a>
