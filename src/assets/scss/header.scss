@@ -1,9 +1,11 @@
 #header {
+  background-color: #316FF0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 4em auto;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 70px;
+  padding: 0 24px;
 
   a {
     text-decoration: none;
@@ -13,24 +15,8 @@
       border-bottom: none;
     }
   }
-}
 
-#header > .site-title {
-  color: $primary;
-  letter-spacing: 0.025em;
-  margin: 16px 0;
-  text-transform: uppercase;
-}
-
-#header > .tagline {
-  color: $primaryMuted;
-  margin: 0;
-
-  a {
-    color: inherit;
-
-    &:hover {
-      color: $primary;
-    }
+  .wizard {
+    width: 60%;
   }
 }

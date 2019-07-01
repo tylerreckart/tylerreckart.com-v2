@@ -57,9 +57,6 @@ class Index extends React.Component {
                 <div className={`post-preview ${i === sliceLength - 1 ? 'last-of-type' : ''}`}>
                   <div id="post-wrapper" key={post.id}>
                     <div className="post-title-wrapper">
-                        <h3 className="date">
-                          {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-                        </h3>
                         <h2 className="link-title">
                           <Link
                             to={post.frontmatter.path}
@@ -69,11 +66,11 @@ class Index extends React.Component {
                             {post.frontmatter.title}
                           </Link>
                         </h2>
+                        <h3 className="date">
+                          Published {moment(post.frontmatter.date).format('MMMM Do YYYY')}
+                        </h3>
                     </div>
                     <article id="article-body" dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
-                    {/* <article id="article-body">
-                      <MDXRenderer>{post.code.body}</MDXRenderer>
-                    </article> */}
                   </div>
                   <button type="button" className="continue-reading__button">Continue Reading</button>
                 </div>
