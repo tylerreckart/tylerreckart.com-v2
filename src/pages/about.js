@@ -20,7 +20,7 @@ export default () => (
       </article>
       <div className="section">
         <h2 className="contact">Contact</h2>
-        <p className="section-content">If you're interested in getting in touch with me, feel free to fill out the form below and send me an email.</p>
+        <p style={{ fontSize: '18px', lineHeight: '32px' }}>If you're interested in getting in touch with me, feel free to fill out the form below and send me an email.</p>
         <ContactForm />
       </div>
     </div>
