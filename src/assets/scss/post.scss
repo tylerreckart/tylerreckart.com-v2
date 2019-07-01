@@ -22,6 +22,22 @@
 //
 // Post content
 //
+#post {
+  .post-header {
+    padding: 24px 24px 0 24px;
+  }
+
+  h3 {
+    display: block;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  p {
+    padding: 0 24px;
+  }
+}
+
 .post-header {
   display: flex;
   justify-content: space-between;
@@ -51,7 +67,7 @@
   }
 }
 
-.post-title-wrapper {
+.preview-title-wrapper {
   margin-bottom: 8px;
 }
 
@@ -63,7 +79,10 @@
 
   pre {
     overflow-x: scroll;
-    margin-bottom: 10px !important;
+    color: white;
+    background-color: black;
+    padding: 24px;
+    margin: 24px 0 !important;
   }
 
   p {

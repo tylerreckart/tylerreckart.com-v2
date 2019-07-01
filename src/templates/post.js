@@ -26,16 +26,16 @@ export default function Template({ data }) {
 
   return (
     <Layout>
-      <div id="container">
+      <div id="post">
         <Helmet title={`Tyler Reckart - ${post.frontmatter.title}`} />
         <div className="post-header">
           <div className="post-title-wrapper">
-            <h3 className="date">
-              {moment(post.frontmatter.date).format('MMMM Do YYYY')}
-            </h3>
             <h2 className="post-title">{post.frontmatter.title}</h2>
+            <span className="date">
+              Published {moment(post.frontmatter.date).format('MMMM Do YYYY')}
+            </span>
           </div>
-          <h3 className="back-button"><Link to="/">← Go Back</Link></h3>
+          <span className="back-button"><Link to="/">← Go Back</Link></span>
         </div>
         <article id="article-body">
           <MDXRenderer>{post.code.body}</MDXRenderer>

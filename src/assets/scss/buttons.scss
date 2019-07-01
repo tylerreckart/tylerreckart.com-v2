@@ -1,6 +1,4 @@
-//
-// Post Buttons
-//
+.back-button,
 .pagination-link__active,
 .pagination-link__disabled,
 .continue-reading__button {
@@ -19,6 +17,7 @@
 
   a {
     color: inherit;
+    text-decoration: none;
   }
 
   &:hover {

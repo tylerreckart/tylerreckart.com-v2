@@ -56,7 +56,7 @@ class Index extends React.Component {
               return (
                 <div className={`post-preview ${i === sliceLength - 1 ? 'last-of-type' : ''}`}>
                   <div id="post-wrapper" key={post.id}>
-                    <div className="post-title-wrapper">
+                    <div className="preview-title-wrapper">
                         <h2 className="link-title">
                           <Link
                             to={post.frontmatter.path}
