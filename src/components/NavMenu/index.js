@@ -17,16 +17,15 @@ export default class NavMenu extends React.Component {
   }
 
   render() {
-    console.log(this.isCurrentRoute(''));
     return (
       <div id="nav-menu">
         <nav>
           <ul>
             <li className={`${this.isCurrentRoute("") ? "active" : ""}`}>
-              {/*🏠*/} <Link to="/">Home</Link>{" "}
+              <Link to="/">Home</Link>{" "}
             </li>
             <li className={`${this.isCurrentRoute("about") ? "active" : ""}`}>
-              {/*📖*/} <Link to="/about">About</Link>{" "}
+              <Link to="/about">About</Link>{" "}
             </li>
             <li>
               {/*👨‍💻*/}{" "}
@@ -35,7 +34,6 @@ export default class NavMenu extends React.Component {
               </a>
             </li>
             <li>
-              {/*🐣*/}{" "}
               <a href="https://twitter.com/tylerreckart" target="_blank">
                 @tylerreckart
               </a>

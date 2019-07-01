@@ -44,7 +44,6 @@ class Index extends React.Component {
     const sliceStart = currentPage === 1 ? 0 : (currentPage * 4) - 4;
     const sliceEnd = currentPage === 1 ? 4 : currentPage * 4;
     const sliceLength = posts.slice(sliceStart, sliceEnd).length;
-    console.log(this.props.data.allMdx);
 
     return (
       <Layout>
@@ -70,9 +69,12 @@ class Index extends React.Component {
                           Published {moment(post.frontmatter.date).format('MMMM Do YYYY')}
                         </h3>
                     </div>
-                    <article id="article-body" dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
+                    {post.frontmatter.featuredImage ? <img className="featured-image" src={post.frontmatter.featuredImage} /> : null}
                   </div>
-                  <button type="button" className="continue-reading__button">Continue Reading</button>
+                  <div className="preview-content__wrapper">
+                    <article id="article-body" dangerouslySetInnerHTML={{ __html: `<p>${post.excerpt}</p>` }} />
+                    <button type="button" className="continue-reading__button">Continue Reading</button>
+                  </div>
                 </div>
               );
             })}
@@ -106,6 +108,7 @@ export const postsQuery = graphql`
             date
             path
             title
+            featuredImage
           }
         }
       }

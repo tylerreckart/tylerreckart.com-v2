@@ -2,8 +2,6 @@
 // Post UI
 //
 .post-preview {
-  padding: 24px;
-
   p {
     margin-bottom: 0 !important;
   }
@@ -16,6 +14,16 @@
 
   &.last-of-type {
     border-bottom: none;
+
+    .preview-content__wrapper {
+      margin-bottom: 0;
+      padding-bottom: 32px;
+    }
+  }
+
+  .featured-image {
+    margin-bottom: 16px;
+    width: 800px;
   }
 }
 
@@ -68,7 +76,12 @@
 }
 
 .preview-title-wrapper {
-  margin-bottom: 8px;
+  padding: 32px 24px 0 24px;
+  margin-bottom: 12px;
+}
+
+.preview-content__wrapper {
+  margin: 0 24px 32px 24px;
 }
 
 #article-body {
