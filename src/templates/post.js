@@ -35,7 +35,7 @@ export default function Template({ data }) {
               Published {moment(post.frontmatter.date).format('MMMM Do YYYY')}
             </span>
           </div>
-          <span className="back-button"><Link to="/">← Go Back</Link></span>
+          <Link style={{ textDecoration: 'none' }}to="/"><span className="back-button">← Go Back</span></Link>
         </div>
         <article id="article-body">
           <MDXRenderer>{post.code.body}</MDXRenderer>

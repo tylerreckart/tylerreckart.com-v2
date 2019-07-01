@@ -3,6 +3,12 @@
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
+  z-index: 2;
+  background-color: #ffffff;
+}
+
+#header {
+  z-index: 1;
 }
 
 #content-wrapper {
@@ -14,14 +20,29 @@
 }
 
 #comments {
-  max-width: 700px !important;
-  margin: 0 auto;
-  margin-top: 1em !important;
-  margin-bottom: 2em !important;
+  margin: 24px;
 
   @media (max-width: 700px) {
     padding: 0;
   }
+}
+
+.page-wrapper {
+  font-size: 16px;
+  margin: 24px;
+
+  .post-header {
+    margin-bottom: 22px;
+  }
+
+  .post-title {
+    margin: 0;
+  }
+}
+
+.section-content {
+  font-size: 18px;
+  line-height: 28px;
 }
 
 .pagination-container {

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import GithubIcon from '../Svg/github';
+import TwitterIcon from '../Svg/twitter';
 
 export default class NavMenu extends React.Component {
   isCurrentRoute(route) {
@@ -37,7 +38,7 @@ export default class NavMenu extends React.Component {
             </li>
             <li>
               <a href="https://twitter.com/tylerreckart" target="_blank">
-                @tylerreckart
+                <TwitterIcon /> <span>@tylerreckart</span>
               </a>
             </li>
           </ul>

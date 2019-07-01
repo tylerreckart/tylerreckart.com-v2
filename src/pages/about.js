@@ -1,19 +1,16 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Layout from '../components/layout';
+import ContactForm from '../components/ContactForm';
 
 export default () => (
   <Layout>
-    <div id="container" className="about-page-wrapper">
-      <div
-        className="page-title-wrapper"
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
-        <h2 className="title">About</h2>
-        <h3 className="home-link"><Link to="/">← Go Back</Link></h3>
+    <div id="container" className="page-wrapper">
+      <div className="post-header" style={{ alignItems: 'center' }}>
+        <div className="post-title-wrapper">
+          <h2 className="post-title">About</h2>
+        </div>
+        <Link style={{ textDecoration: 'none' }}to="/"><span className="back-button">← Go Back</span></Link>
       </div>
       <article id="article-body">
         <p>I'm a software engineer at <a href="https://boomtownroi.com" target="_blank">BoomTownROI</a>, where I build engaging experiences that help real estate professionals aquire new leads and grow their businesses. Previously, I've worked as a front end engineer at <a href="https://tiphive.com" target="_blank">TipHive</a>, where I led the development of their cross-platform mobile application, and as a UI engineer at <a href="https://authenticff.com" target="_blank">Authentic Form &amp; Function</a>, where I worked directly with our clients to develop engaging digital experiences and turn their visions into reality.</p>
@@ -21,6 +18,11 @@ export default () => (
         <blockquote><p>This course is exactly what you need to understand and start using GraphQL.<br></br><span>-Carlos Corutto</span></p></blockquote>
         <p>If you're interested in getting in touch with me, send me a message on Twitter using the link in the header. Alternatively, you can try guessing my Gmail address. It may or may not have something to do with my first and last name.</p>
       </article>
+      <div className="section">
+        <h2 className="contact">Contact</h2>
+        <p className="section-content">If you're interested in getting in touch with me, feel free to fill out the form below and send me an email.</p>
+        <ContactForm />
+      </div>
     </div>
   </Layout>
 );

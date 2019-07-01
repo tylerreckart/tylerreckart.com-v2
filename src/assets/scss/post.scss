@@ -50,7 +50,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .date {
@@ -68,6 +68,7 @@
   padding: 0;
   display: block;
   margin: 0px 0 10px 0;
+  letter-spacing: 0.01em;
 
   a {
     color: #000000;
@@ -76,12 +77,12 @@
 }
 
 .preview-title-wrapper {
-  padding: 32px 24px 0 24px;
+  padding: 24px 24px 0 24px;
   margin-bottom: 12px;
 }
 
 .preview-content__wrapper {
-  margin: 0 24px 32px 24px;
+  margin: 0 24px 24px 24px;
 }
 
 #article-body {
@@ -89,6 +90,16 @@
   font-weight: 300;
   line-height: 28px;
   margin-bottom: 20px;
+  max-width: 800px;
+
+  a {
+    color: #316FF0;
+    text-decoration: none;
+
+    &:hover {
+      color: darken(#316FF0, 20%);
+    }
+  }
 
   pre {
     overflow-x: scroll;
@@ -119,19 +130,21 @@
   }
 
   hr {
-    height: 1px;
+    height: 6px;
     border: none;
     display: block;
-    background-color: rgba(220, 222, 222, 1.00);
-    margin: 1em auto 1em auto;
+    background-color: rgba(#8194A4, 0.1);
+    margin: 24px !important;
   }
 
   ul {
-    padding: 0 20px;
+    display: block;
+    padding: 0 100px;
+    margin-bottom: 16px !important;
   }
 
   ol {
-    padding: 0 20px;
+    margin: 0 24px !important;
 
     li {
       padding-left: 20px;
@@ -140,9 +153,8 @@
 
   blockquote {
     p {
-      border-left: 1px dotted #176ABB;
+      border-left: 6px solid rgba(#8194A4, 0.1);
       font-style: italic;
-      padding-left: 20px;
 
       span {
         font-size: 12px;
@@ -198,26 +210,49 @@
 //
 // Images
 //
-.image-full,
-.image-wrap,
-.image-med {
+.image-full {
+  text-align: center;
+  margin-bottom: 16px;
+
   img {
-    display: block;
-    width: 100%;
-    height: auto;
+    width: 800px;
   }
 
   em {
-    color: #7D8691;
-    font-size: 12px;
-    text-align: left;
+    display: block;
+    color: rgba(#8194A4, .8);
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    width: 100%;
   }
 }
 
-.image-wrap {
-  max-width: 300px;
-}
+.image-align {
+  &__right {
+    float: right;
+    padding: 0 24px;
+  }
 
-.image-source {
-  margin-top: 28px;
+  &__left {
+    float: left;
+    padding: 0 24px;
+  }
+
+  &__right, &__left {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      max-width: 300px;
+    }
+
+    em {
+      color: rgba(#8194A4, .8);
+      font-size: 14px;
+      max-width: 300px;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
 }

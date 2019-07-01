@@ -36,7 +36,6 @@
           margin: 0;
           margin-left: 6px;
           padding: 0;
-          height: 19px;
         }
 
         &:hover {
@@ -64,6 +63,11 @@
   #github-icon {
     height: 18px;
     width: 18px;
+  }
+
+  #twitter-icon {
+    position: relative;
+    top: 3px;
   }
 
   h4 {
