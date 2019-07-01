@@ -1,40 +1,48 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from "react";
+import Link from "gatsby-link";
+import GithubIcon from '../Svg/github';
 
-export default () => (
-  <div id="nav-menu">
-    <div className="intro">
-      <p>I'm <strong>Tyler Reckart</strong>; a <a href="https://github.com/tylerreckart" target="_blank">software developer</a>, <a href="https://dribbble.com/tylerreckart" target="_blank">occasional designer</a>, and watch geek.</p>
-    </div>
+export default class NavMenu extends React.Component {
+  isCurrentRoute(route) {
+    let location;
+    if (typeof window !== "undefined") {
+      location = window.location.pathname.split("/");
 
-    <nav>
-      <ul>
-        <li>🏠 <Link to="/">Home</Link> <PageIndicator pathname="" /></li>
-        <li>📖 <Link to="/about">About</Link> <PageIndicator pathname="about" /></li>
-        <li>👨‍💻 <a href="https://github.com/tylerreckart" target="_blank">Github</a></li>
-        <li>🐣 <a href="https://twitter.com/tylerreckart" target="_blank">@tylerreckart</a></li>
-      </ul>
-    </nav>
-
-    <h4>Projects</h4>
-    <ul className="project-list">
-      <li><a href="https://www.manning.com/livevideo/graphql-in-motion" target="_blank">GraphQL In Motion</a>: A comprehensive video course with over two and a half hours of content and 28 exercises that cover the fundementals of building, deploying, and scaling a GraphQL API.</li>
-      <li><a href="https://github.com/tylerreckart/hyperzsh" target="_blank">Hyperzsh</a>: A zsh shell prompt designed to complement a git-focused workflow.</li>
-    </ul>
-  </div>
-);
-
-const PageIndicator = props => {
-  let location;
-  if (typeof window !== 'undefined') {
-    location = window.location.pathname.split('/');
-
-    if (location[1] === props.pathname) {
-      return (
-        <span className="page-indicator">← You Are Here</span>
-      );
+      if (location[1] === route) {
+        return true;
+      }
     }
+
+    return false;
   }
 
-  return null;
-};
+  render() {
+    console.log(this.isCurrentRoute(''));
+    return (
+      <div id="nav-menu">
+        <nav>
+          <ul>
+            <li className={`${this.isCurrentRoute("") ? "active" : ""}`}>
+              {/*🏠*/} <Link to="/">Home</Link>{" "}
+            </li>
+            <li className={`${this.isCurrentRoute("about") ? "active" : ""}`}>
+              {/*📖*/} <Link to="/about">About</Link>{" "}
+            </li>
+            <li>
+              {/*👨‍💻*/}{" "}
+              <a href="https://github.com/tylerreckart" target="_blank">
+                <GithubIcon /> <span>Github</span>
+              </a>
+            </li>
+            <li>
+              {/*🐣*/}{" "}
+              <a href="https://twitter.com/tylerreckart" target="_blank">
+                @tylerreckart
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    );
+  }
+}

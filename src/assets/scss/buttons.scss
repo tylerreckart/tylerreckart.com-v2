@@ -1,0 +1,45 @@
+//
+// Post Buttons
+//
+.pagination-link__active,
+.pagination-link__disabled,
+.continue-reading__button {
+  background-color: #316FF0;
+  cursor: pointer;
+  border: none;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+
+  padding: 12px 16px;
+
+  transition: all 150ms ease;
+  text-decoration: none;
+
+  a {
+    color: inherit;
+  }
+
+  &:hover {
+    background-color: darken(#316FF0, 20%);
+  }
+}
+
+.pagination-link__active,
+.pagination-link__disabled {
+  padding: 24px 48px;
+}
+
+.pagination-link__disabled {
+  background-color: #8194A4;
+  cursor: default;
+
+  &:hover {
+    background-color: #8194A4;
+  }
+}
+
+.back-button {
+  margin: 0;
+}

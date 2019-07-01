@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 import '../assets/scss/main.scss';
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <div id="template-wrapper">
     <Helmet
       title="Tyler Reckart"
       meta={[
@@ -25,7 +25,6 @@ const TemplateWrapper = ({ children }) => (
       <div id="content-wrapper">
         {children}
       </div>
-      <NavMenu />
       <Footer />
     </div>
   </div>
