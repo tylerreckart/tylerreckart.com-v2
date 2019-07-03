@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import NavMenu from '../NavMenu';
-import partyWizard from '../../party-wizard.gif';
+import Wizard from '../Svg/wizard';
 
 export default () => {
   return (
     <div id="header">
       <Link className="wizard" to="/">
-        {/* <img src={partyWizard} width="16px" height="16px" /> */}
+        <Wizard />
       </Link>
       <NavMenu />
     </div>
