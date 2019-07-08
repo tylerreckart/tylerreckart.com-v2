@@ -8,17 +8,18 @@ export default class Slider extends React.Component {
       itemCount: 0,
       currentIndex: 0,
       transform: 0,
-      slides: [],
+      slides: this.props.slides || [],
     };
   }
 
   componentDidMount() {
-    const slider = document.querySelector('.slides');
-    const slides = Array.from(slider.children);
-
-    this.setItemCount(slides.length);
-    this.setState({ slides });
     this.startTimer();
+
+    const { slides } = this.props;
+
+    if (slides) {
+      this.setItemCount(slides.length);
+    }
   }
 
   startTimer() {
@@ -66,23 +67,21 @@ export default class Slider extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { transform } = this.state;
+    const { slides } = this.props;
+
+    if (!slides) {
+      // no-op
+      return <div />;
+    }
 
     return (
       <div className="slider__wrapper">
-        {/* <div className="slider__controls">
-          <div className="next-arrow" />
-          <div className="play-pause__button" />
-          <div className="prev-arrow" />
-        </div> */}
         <div className="slider">
           <ul className="slides" style={{ transform: `translateX(-${transform}px)`, transition: 'transform ease-out 300ms' }}>
-            <li className="slide" />
-            <li className="slide" style={{ backgroundColor: 'green'}} />
-            <li className="slide" style={{ backgroundColor: 'yellow' }}/>
-            <li className="slide" style={{ backgroundColor: 'blue' }} />
-            <li className="slide" style={{ backgroundColor: 'red' }} />
+            {slides.map(url => (
+              <li className="slide" style={{ backgroundImage: `url('${url}')`, backgroundSize: 'cover' }} />
+            ))}
           </ul>
         </div>
         <div className="slider__dots">

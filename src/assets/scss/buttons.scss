@@ -35,6 +35,7 @@
 
 .pagination-link__active,
 .pagination-link__disabled {
+  box-shadow: none;
   border-radius: 0;
   padding: 32px 48px;
 }
