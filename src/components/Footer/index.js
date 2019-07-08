@@ -6,7 +6,7 @@ export default () => (
   <div id="footer">
     <div className="footer__grid">
       <div className="cell">
-        <input className="footer__search-bar" type="text" placeholder="Search the archive" />
+        {/* <input className="footer__search-bar" type="text" placeholder="Search the archive" /> */}
         <h3>About</h3>
         <p>Tyler Reckart is a software developer, designer, consultant, and horologist currently building the future of online real estate platforms at <a href="https://boomtownroi.com" target="_blank">BoomTown</a>.</p>
       </div>
