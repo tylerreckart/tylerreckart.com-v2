@@ -18,7 +18,7 @@ export default function Template({ data }) {
     (d.head || d.body).appendChild(s);
 
     return (
-      <div id="disqus_thread" />
+      <div id="disqus_thread" className="iframe-container" />
     );
   };
 
