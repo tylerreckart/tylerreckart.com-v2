@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import NavMenu from '../NavMenu';
-import Wizard from '../Svg/wizard';
+import Eagle from '../Svg/eagle';
 
 export default () => {
   return (
     <div id="header">
-      <Link className="wizard" to="/">
-        <Wizard />
+      <Link className="eagle" to="/">
+        <Eagle fill="#E00015" />
       </Link>
       <NavMenu />
     </div>

@@ -33,10 +33,6 @@ export default class Slider extends React.Component {
     this.setState({ itemCount });
   }
 
-  goToPrevSlide() {
-    // do something
-  }
-
   goToNextSlide() {
     const { currentIndex, itemCount } = this.state;
     const nextIndex = currentIndex + 1 > itemCount - 1 ? 0 : currentIndex + 1;
