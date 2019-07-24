@@ -7,7 +7,7 @@ export default () => {
   return (
     <div id="header">
       <Link className="eagle" to="/">
-        <Eagle fill="#E00015" />
+        <Eagle fill="#DC2938" />
       </Link>
       <NavMenu />
     </div>

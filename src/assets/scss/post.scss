@@ -23,7 +23,7 @@
 
   .featured-image {
     margin-bottom: 16px;
-    width: 800px;
+    max-width: 100%;
   }
 }
 
@@ -90,7 +90,7 @@
   font-weight: 300;
   line-height: 28px;
   margin-bottom: 20px;
-  max-width: 800px;
+  width: 100%;
 
   a {
     color: #316FF0;
@@ -186,26 +186,6 @@
   h3 {
     margin-top: 14px;
   }
-
-  .gatsby-resp-image-link {
-    border: none;
-    display: inline !important;
-  }
-
-  @media (max-width: 1040px) {
-    a.gatsby-resp-image-link {
-      min-width: 760px;
-      transform: translateX(42%);
-    }
-  }
-
-  @media (max-width: 800px) {
-    a.gatsby-resp-image-link {
-      min-width: 100%;
-      left: 0%;
-      transform: translateX(0%);
-    }
-  }
 }
 
 //
@@ -216,7 +196,7 @@
   margin-bottom: 16px;
 
   img {
-    width: 800px;
+    width: 100%;
   }
 
   em {

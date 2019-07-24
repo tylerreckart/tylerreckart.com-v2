@@ -1,4 +1,5 @@
 import React from 'react';
+import EagleOutline from '../Svg/eagle-outline';
 
 const currentYear = new Date().getFullYear();
 
