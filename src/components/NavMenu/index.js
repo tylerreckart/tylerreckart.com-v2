@@ -44,8 +44,17 @@ export default class NavMenu extends React.Component {
   }
 
   onClickHamburger() {
-    console.log(document.body.style);
-    this.setState({ isActive: !this.state.isActive });
+    const { isActive } = this.state;
+
+    if (!isActive) {
+      this.setState({ isActive: true });
+
+      document.body.classList.add("fixed");
+    } else {
+      this.setState({ isActive: false });
+
+      document.body.classList.remove("fixed");
+    }
   }
 
   renderNav(navClass) {
@@ -84,12 +93,9 @@ export default class NavMenu extends React.Component {
         {isMobile === true ? (
           <React.Fragment>
             <div className="hamburger-container">
-              <button
-                className="hamburger"
-                onClick={this.onClickHamburger.bind(this)}
-              >
-                Nav
-              </button>
+              <div className="hamburger-box" onClick={this.onClickHamburger.bind(this)}>
+                <span className={`hamburger ${isActive === true ? "active" : ""}`} />
+              </div>
             </div>
             {isActive === true ? this.renderNav("nav-active") : null}
             <div

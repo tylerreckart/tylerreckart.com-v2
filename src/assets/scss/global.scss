@@ -10,6 +10,10 @@ body {
   letter-spacing: 0.025em;
   line-height: 22px;
   height: 100%;
+
+  &.fixed {
+    overflow: hidden;
+  }
 }
 
 #template-wrapper {

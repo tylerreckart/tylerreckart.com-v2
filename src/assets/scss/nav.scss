@@ -67,8 +67,75 @@
     height: 90px;
   }
 
-  .hamburger {
+  .hamburger-box {
     cursor: pointer;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger {
+    width: 32px;
+    height: 4px;
+    display: block;
+    background-color: #000000;
+
+    &:before, &:after {
+      position: relative;
+      display: block;
+      height: 4px;
+      width: 32px;
+      background-color: #000000;
+      content: '';
+      transition: all 300ms ease;
+    }
+
+    &:before {
+      top: -11px;
+    }
+
+    &:after {
+      top: 7px;
+    }
+
+    @keyframes clickHamburger {
+      0%   {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        &:before {
+          top: 0;
+          transform: rotate(0deg);
+        }
+
+        &:after {
+          top: -4px;
+          transform: rotate(0deg);
+        }
+      }
+
+      100% {
+        background-color: transparent;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.active {
+      animation: clickHamburger 1s 1;
+      background-color: transparent;
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        top: -4px;
+        transform: rotate(-45deg);
+      }
+    }
   }
 
   .nav-overlay {
@@ -80,7 +147,7 @@
       display: block;
 
       &.active {
-        height: 5000px;
+        height: 1000px;
         opacity: 1;
       }
     }
@@ -116,6 +183,14 @@
 
           svg > g > path {
             fill: #316FF0;
+          }
+        }
+
+        &.active {
+          background-color: #ffffff;
+
+          a:hover {
+            color: inherit;
           }
         }
       }

@@ -14,7 +14,7 @@ const Pagination = ({ currentPage, pageCount, nextPage, prevPage }) => (
     <span className="pagination-text">{currentPage} of {pageCount}</span>
 
     {nextPage <= pageCount ? (
-      <Link className="pagination-link__active" to={`/${nextPage}`}>
+      <Link className="pagination-link__active" to={`/${nextPage}`} style={{ position: 'relative', right: '-1px' }}>
         Next
       </Link>
     ) : (
