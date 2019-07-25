@@ -23,10 +23,12 @@ export default class Slider extends React.Component {
   }
 
   startTimer() {
+    const { duration } = this.props;
+
     setTimeout(() => {
       this.goToNextSlide();
       this.startTimer();
-    }, 8000);
+    }, duration ? (duration * 1000) : 8000);
   }
 
   setItemCount(itemCount) {

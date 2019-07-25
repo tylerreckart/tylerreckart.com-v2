@@ -6,7 +6,7 @@
   background-color: #ffffff;
 
   @media (max-width: 600px) {
-    margin-top: 90px;
+    margin-top: 88px;
   }
 }
 
@@ -43,14 +43,44 @@
   }
 }
 
+.inner-page {
+  margin: 24px 0;
+}
+
+.section {
+  .post-title {
+    margin: 0 24px;
+  }
+
+  hr {
+    border: none;
+    height: 6px;
+    margin: 24px;
+    background-color: #ECEEF1;
+  }
+}
+
 .section-title {
-  margin: 0 24px 24px 24px;
+  margin: 0 24px 4px 24px;
+  display: flex;
+  align-items: center;
+
+  a {
+    margin: 0;
+    padding: 0;
+    height: 24px;
+  }
+
+  svg {
+    cursor: pointer;
+    margin-left: 5px;
+  }
 }
 
 .section-content {
   font-size: 18px;
   line-height: 28px;
-  margin: 0 24px 24px 24px;
+  margin: 0 24px 18px 24px;
 }
 
 .pagination-container {

@@ -1,4 +1,5 @@
 .slide {
+  display: block;
   width: 800px;
   height: 420px;
   background-color: black;
@@ -6,7 +7,7 @@
 
 .slider {
   display: flex;
-  width: 800px;
+  width: auto;
   height: 420px;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -28,7 +29,7 @@
 .slider__dots {
   display: flex;
   justify-content: center;
-  margin: 24px 0 24px 0;
+  margin: 24px 0 12px 0;
 }
 
 .dot {
@@ -49,7 +50,13 @@
 }
 
 .slider__wrapper {
+  max-width: 800px;
   position: relative;
+
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
 
 .slider__controls {

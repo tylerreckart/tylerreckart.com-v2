@@ -64,9 +64,9 @@ export default class NavMenu extends React.Component {
           <li className={`${this.isCurrentRoute("") ? "active" : ""}`}>
             <Link to="/">Blog</Link>
           </li>
-          {/* <li className={`${this.isCurrentRoute("work") ? "active" : ""}`}>
+          <li className={`${this.isCurrentRoute("work") ? "active" : ""}`}>
             <Link to="/work">Work</Link>
-          </li> */}
+          </li>
           <li className={`${this.isCurrentRoute("about") ? "active" : ""}`}>
             <Link to="/about">About</Link>
           </li>

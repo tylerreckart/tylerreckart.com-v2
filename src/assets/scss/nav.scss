@@ -15,8 +15,9 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      background-color: #316FF0;
-      margin-top: 90px;
+      background-color: darken(#316FF0, 25%);
+      margin-top: 88px;
+      padding: 12px;
 
       li {
         margin: 8px;
@@ -26,8 +27,7 @@
         }
 
         &.active {
-          background-color: darken(#2A64EE, 20%);
-          margin: 8px;
+          background-color: rgba(#2A64EE, .5);
         }
       }
     }
@@ -79,14 +79,14 @@
     width: 32px;
     height: 4px;
     display: block;
-    background-color: #000000;
+    background-color: #ffffff;
 
     &:before, &:after {
       position: relative;
       display: block;
       height: 4px;
       width: 32px;
-      background-color: #000000;
+      background-color: #ffffff;
       content: '';
       transition: all 300ms ease;
     }
@@ -154,7 +154,7 @@
   }
 
   @media (min-width: 600px) {
-    max-width: 450px;
+    max-width: 530px;
     display: flex;
     justify-content: center;
     align-items: center;

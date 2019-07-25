@@ -10,7 +10,7 @@ export default () => (
         <div className="post-title-wrapper">
           <h2 className="post-title">About</h2>
         </div>
-        <Link style={{ textDecoration: 'none' }}to="/"><span className="back-button">← Go Back</span></Link>
+        {/* <Link style={{ textDecoration: 'none' }}to="/"><span className="back-button">← Go Back</span></Link> */}
       </div>
       <article id="article-body">
         <p>I'm a software engineer at <a href="https://boomtownroi.com" target="_blank">BoomTownROI</a>, where I build engaging experiences that help real estate professionals aquire new leads and grow their businesses. Previously, I've worked as a front end engineer at <a href="https://tiphive.com" target="_blank">TipHive</a>, where I led the development of their cross-platform mobile application, and as a UI engineer at <a href="https://authenticff.com" target="_blank">Authentic Form &amp; Function</a>, where I worked directly with our clients to develop engaging digital experiences and turn their visions into reality.</p>
