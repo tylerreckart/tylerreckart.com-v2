@@ -36,7 +36,10 @@ export default class NavMenu extends React.Component {
     if (typeof window !== "undefined") {
       location = window.location.pathname.split("/");
 
+      const blogRoute = window.location.pathname.substring(1, 11).match(/([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/g);
       if (location[1] === route) {
+        return true;
+      } else if (route === "" && (blogRoute && blogRoute.length > 0)) {
         return true;
       }
     }
