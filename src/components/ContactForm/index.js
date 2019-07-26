@@ -45,7 +45,7 @@ export default class ContactForm extends React.Component {
     console.log(fullName, email, subject, message);
     axios({
       method: "POST",
-      url: "http://localhost:4040/send-mail",
+      url: "https://tylerreckart.com:4040/send-mail",
       data: {
         fullName,
         email,
@@ -72,6 +72,8 @@ export default class ContactForm extends React.Component {
       subject: '',
       message: ''
     });
+
+    document.getElementById("form").reset();
   }
 
   render() {
