@@ -9,7 +9,8 @@ export default class NavMenu extends React.Component {
 
     this.state = {
       isMobile: false,
-      isActive: false
+      isActive: false,
+      reverseAnimation: false,
     };
   }
 
@@ -43,17 +44,23 @@ export default class NavMenu extends React.Component {
     return false;
   }
 
-  onClickHamburger() {
-    const { isActive } = this.state;
+  toggleMenu() {
+    const { isActive, isMobile } = this.state;
 
-    if (!isActive) {
-      this.setState({ isActive: true });
+    if (isMobile) {
+      if (!isActive) {
+        this.setState({ isActive: true });
 
-      document.body.classList.add("fixed");
-    } else {
-      this.setState({ isActive: false });
+        document.body.classList.add("fixed");
+      } else {
+        this.setState({ isActive: false, reverseAnimation: true });
 
-      document.body.classList.remove("fixed");
+        document.body.classList.remove("fixed");
+
+        setTimeout(() => {
+          this.setState({ reverseAnimation: false });
+        }, 500);
+      }
     }
   }
 
@@ -62,13 +69,13 @@ export default class NavMenu extends React.Component {
       <nav className={navClass || ""}>
         <ul>
           <li className={`${this.isCurrentRoute("") ? "active" : ""}`}>
-            <Link to="/">Blog</Link>
+            <Link onClick={this.toggleMenu.bind(this)} to="/">Blog</Link>
           </li>
           <li className={`${this.isCurrentRoute("work") ? "active" : ""}`}>
-            <Link to="/work">Work</Link>
+            <Link onClick={this.toggleMenu.bind(this)} to="/work">Work</Link>
           </li>
           <li className={`${this.isCurrentRoute("about") ? "active" : ""}`}>
-            <Link to="/about">About</Link>
+            <Link onClick={this.toggleMenu.bind(this)} to="/about">About</Link>
           </li>
           <li>
             <a href="https://github.com/tylerreckart" target="_blank">
@@ -86,15 +93,15 @@ export default class NavMenu extends React.Component {
   }
 
   render() {
-    const { isMobile, isActive } = this.state;
+    const { isMobile, isActive, reverseAnimation } = this.state;
 
     return (
       <div id="nav-menu" className={isMobile && "mobile"}>
         {isMobile === true ? (
           <React.Fragment>
             <div className="hamburger-container">
-              <div className="hamburger-box" onClick={this.onClickHamburger.bind(this)}>
-                <span className={`hamburger ${isActive === true ? "active" : ""}`} />
+              <div className="hamburger-box" onClick={this.toggleMenu.bind(this)}>
+                <span className={`hamburger ${isActive === true ? "active" : ""} ${reverseAnimation === true ? "reverse" : ""}`} />
               </div>
             </div>
             {isActive === true ? this.renderNav("nav-active") : null}

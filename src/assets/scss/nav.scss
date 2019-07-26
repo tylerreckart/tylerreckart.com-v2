@@ -76,27 +76,27 @@
   }
 
   .hamburger {
-    width: 32px;
-    height: 4px;
+    width: 30px;
+    height: 3px;
     display: block;
     background-color: #ffffff;
 
     &:before, &:after {
       position: relative;
       display: block;
-      height: 4px;
-      width: 32px;
+      height: 3px;
+      width: 30px;
       background-color: #ffffff;
       content: '';
       transition: all 300ms ease;
     }
 
     &:before {
-      top: -11px;
+      top: -9px;
     }
 
     &:after {
-      top: 7px;
+      top: 6px;
     }
 
     @keyframes clickHamburger {
@@ -111,7 +111,7 @@
         }
 
         &:after {
-          top: -4px;
+          top: -3px;
           transform: rotate(0deg);
         }
       }
@@ -132,8 +132,22 @@
       }
 
       &:after {
-        top: -4px;
+        top: -3px;
         transform: rotate(-45deg);
+      }
+    }
+
+    &.reverse {
+      background-color: transparent;
+
+      &:before {
+        top: 0;
+        transform: rotate(0deg);
+      }
+
+      &:after {
+        top: -3px;
+        transform: rotate(0deg);
       }
     }
   }
