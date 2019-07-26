@@ -1,39 +1,9 @@
 #nav-menu {
   font-size: 16px;
   width: 100%;
-  z-index: 20;
+  z-index: 10;
 
-  &.mobile {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      background-color: darken(#316FF0, 25%);
-      margin-top: 88px;
-      padding: 12px;
-
-      li {
-        margin: 8px;
-
-        svg > g > path {
-          fill: #ffffff;
-        }
-
-        &.active {
-          background-color: rgba(#2A64EE, .5);
-        }
-      }
-    }
-  }
-
-  li {
+  ul > li {
     align-items: column;
     color: #ffffff;
     font-weight: bold;
@@ -59,114 +29,7 @@
     }
   }
 
-  .hamburger-container {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 12px;
-    height: 90px;
-  }
-
-  .hamburger-box {
-    cursor: pointer;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hamburger {
-    width: 30px;
-    height: 3px;
-    display: block;
-    background-color: #ffffff;
-
-    &:before, &:after {
-      position: relative;
-      display: block;
-      height: 3px;
-      width: 30px;
-      background-color: #ffffff;
-      content: '';
-      transition: all 300ms ease;
-    }
-
-    &:before {
-      top: -9px;
-    }
-
-    &:after {
-      top: 6px;
-    }
-
-    @keyframes clickHamburger {
-      0%   {
-        transform: rotate(0deg);
-      }
-
-      50% {
-        &:before {
-          top: 0;
-          transform: rotate(0deg);
-        }
-
-        &:after {
-          top: -3px;
-          transform: rotate(0deg);
-        }
-      }
-
-      100% {
-        background-color: transparent;
-        transform: rotate(180deg);
-      }
-    }
-
-    &.active {
-      animation: clickHamburger 1s 1;
-      background-color: transparent;
-
-      &:before {
-        top: 0;
-        transform: rotate(45deg);
-      }
-
-      &:after {
-        top: -3px;
-        transform: rotate(-45deg);
-      }
-    }
-
-    &.reverse {
-      background-color: transparent;
-
-      &:before {
-        top: 0;
-        transform: rotate(0deg);
-      }
-
-      &:after {
-        top: -3px;
-        transform: rotate(0deg);
-      }
-    }
-  }
-
-  .nav-overlay {
-    background-color: rgba(#000000, .6);
-    display: none;
-    opacity: 0;
-
-    @media (max-width: 600px) {
-      display: block;
-
-      &.active {
-        height: 1000px;
-        opacity: 1;
-      }
-    }
-  }
-
+  // desktop
   @media (min-width: 600px) {
     max-width: 530px;
     display: flex;
@@ -211,6 +74,53 @@
     }
   }
 
+  &.mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+
+    ul {
+      animation: summonNav 1s forwards;
+      overflow: hidden;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: darken(#316FF0, 25%);
+      margin-top: 88px;
+      padding: 12px;
+      z-index: -1;
+
+      li {
+        margin: 8px;
+
+        svg > g > path {
+          fill: #ffffff;
+        }
+
+        &.active {
+          background-color: rgba(#2A64EE, .5);
+        }
+      }
+
+      &.reverse { animation: dismissNav 1s forwards; }
+    }
+
+    .nav-overlay {
+      background-color: rgba(#000000, .6);
+      opacity: 0;
+      display: none;
+      height: 2000px;
+
+      @media (max-width: 600px) {
+        &.active { animation: summonOverlay 1s forwards; display: block; }
+        &.reverse { animation: dismissOverlay 1s forwards; display: block; }
+      }
+    }
+  }
+
   #github-icon {
     height: 18px;
     width: 18px;
@@ -219,5 +129,207 @@
   #twitter-icon {
     position: relative;
     top: 3px;
+  }
+}
+
+//
+// Hamburger menu icon
+//
+.hamburger-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 12px;
+  height: 90px;
+}
+
+.hamburger-box {
+  cursor: pointer;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger {
+  width: 30px;
+  height: 3px;
+  display: block;
+  background-color: #ffffff;
+
+  &:before, &:after {
+    position: relative;
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: #ffffff;
+    content: '';
+    transition: all 300ms ease;
+  }
+
+  &:before {
+    top: -9px;
+  }
+
+  &:after {
+    top: 6px;
+  }
+
+  &.active {
+    animation: hide 500ms forwards;
+    &:before { animation: topDown 500ms forwards; }
+    &:after { animation: bottomUp 500ms forwards; }
+  }
+
+  &.reverse {
+    animation: show 500ms forwards;
+    &:before { animation: toTop 500ms forwards; }
+    &:after { animation: toBottom 500ms forwards; }
+  }
+}
+
+//
+// Menu/Overlay keyframes
+//
+@keyframes summonNav {
+  from {
+    height: 0;
+    padding: 0;
+  }
+
+  to {
+    height: 330px;
+  }
+}
+
+@keyframes dismissNav {
+  from {
+    height: 330px;
+  }
+
+  to {
+    height: 0;
+    padding: 0;
+  }
+}
+
+@keyframes summonOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dismissOverlay {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+//
+// Hamburger keyframes
+//
+@keyframes hide {
+  from {
+    background-color: #ffffff;
+  }
+
+  49% {
+    background-color: #ffffff;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes show {
+  from {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: #ffffff;
+  }
+}
+
+@keyframes topDown {
+  from {
+    top: 6px;
+  }
+
+  50% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  to {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes bottomUp {
+  from {
+    top: -9px;
+  }
+
+  50% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  to {
+    top: -3px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes toTop {
+  from {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  to {
+    top: 9px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes toBottom {
+  from {
+    top: -3px;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    top: -3px;
+    transform: rotate(0deg);
+  }
+
+  to {
+    top: -12px;
+    transform: rotate(0deg);
   }
 }

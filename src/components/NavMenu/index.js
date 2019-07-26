@@ -62,15 +62,17 @@ export default class NavMenu extends React.Component {
 
         setTimeout(() => {
           this.setState({ reverseAnimation: false });
-        }, 500);
+        }, 1000);
       }
     }
   }
 
   renderNav(navClass) {
+    const { reverseAnimation } = this.state;
+
     return (
-      <nav className={navClass || ""}>
-        <ul>
+      <nav className={`${reverseAnimation === true ? "reverse" : ""}`}>
+        <ul className={`${reverseAnimation === true ? "reverse" : ""}`}>
           <li className={`${this.isCurrentRoute("") ? "active" : ""}`}>
             <Link onClick={this.toggleMenu.bind(this)} to="/">Blog</Link>
           </li>
@@ -107,9 +109,9 @@ export default class NavMenu extends React.Component {
                 <span className={`hamburger ${isActive === true ? "active" : ""} ${reverseAnimation === true ? "reverse" : ""}`} />
               </div>
             </div>
-            {isActive === true ? this.renderNav("nav-active") : null}
+            {(isActive === true || reverseAnimation === true) ? this.renderNav("nav-active") : null}
             <div
-              className={`nav-overlay ${isActive === true ? "active" : ""}`}
+              className={`nav-overlay ${isActive === true ? "active" : ""} ${reverseAnimation === true ? "reverse" : ""}`}
             />
           </React.Fragment>
         ) : this.renderNav()}
