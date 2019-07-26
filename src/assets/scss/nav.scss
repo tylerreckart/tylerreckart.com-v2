@@ -81,7 +81,7 @@
     margin: 0;
 
     ul {
-      animation: summonNav 1s forwards;
+      animation: summonNav 500ms forwards;
       overflow: hidden;
       list-style: none;
       margin: 0;
@@ -105,7 +105,7 @@
         }
       }
 
-      &.reverse { animation: dismissNav 1s forwards; }
+      &.reverse { animation: dismissNav 500ms forwards; }
     }
 
     .nav-overlay {
@@ -115,8 +115,8 @@
       height: 2000px;
 
       @media (max-width: 600px) {
-        &.active { animation: summonOverlay 1s forwards; display: block; }
-        &.reverse { animation: dismissOverlay 1s forwards; display: block; }
+        &.active { animation: summonOverlay 500ms forwards; display: block; }
+        &.reverse { animation: dismissOverlay 500ms forwards; display: block; }
       }
     }
   }
