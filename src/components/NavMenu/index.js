@@ -10,7 +10,7 @@ export default class NavMenu extends React.Component {
     this.state = {
       isMobile: false,
       isActive: false,
-      reverseAnimation: false,
+      reverseAnimation: false
     };
   }
 
@@ -31,64 +31,72 @@ export default class NavMenu extends React.Component {
     });
   }
 
-  isCurrentRoute(route) {
+  getRouteClass(route) {
     if (typeof window !== "undefined") {
       const path = window.location.pathname;
-      console.log(route);
-      console.log(path);
       const location = path.split("/");
-      console.log(location[1]);
       const isRoute = location[1] == route;
-      console.log(isRoute);
       // Match blog routes by the publication date in the path
-      const isBlogRoute = path.substring(1, 11).match(/([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/g);
+      const isBlogRoute = path
+        .substring(1, 11)
+        .match(/([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/g);
 
       if (isRoute) {
-        return true;
+        return "active";
       } else if (isRoute && path === ("" || "/")) {
-        return true;
+        return "active";
       } else if (isBlogRoute && route !== "work" && route !== "about") {
-        return true;
+        return "active";
       }
     }
 
-    return false;
+    return "inactive";
   }
 
-  toggleMenu() {
+  toggleNavMenu() {
     const { isActive, isMobile } = this.state;
 
     if (isMobile) {
       if (!isActive) {
+        // Summon the nav menu
         this.setState({ isActive: true });
-
+        // Lock scrolling
         document.body.classList.add("fixed");
       } else {
+        // Dismiss the nav menu, start the reversal animation
         this.setState({ isActive: false, reverseAnimation: true });
-
+        // Allow users to scroll again
         document.body.classList.remove("fixed");
 
         setTimeout(() => {
+          // After the animation has completed, remove the animation class
           this.setState({ reverseAnimation: false });
         }, 1000);
       }
     }
   }
 
-  renderNav(navClass) {
+  renderNavMenu() {
     const { reverseAnimation } = this.state;
+    const shouldReverse = reverseAnimation === true ? "reverse" : "";
 
     return (
-      <nav className={`${reverseAnimation === true ? "reverse" : ""}`}>
-        <ul className={`${reverseAnimation === true ? "reverse" : ""}`}>
-          <li className={`${this.isCurrentRoute("") ? "active" : ""}`}>
-            <Link onClick={this.toggleMenu.bind(this)} to="/">Blog</Link>
+      <nav className={shouldReverse}>
+        <ul className={shouldReverse}>
+          <li className={this.getRouteClass("")}>
+            <Link onClick={this.toggleNavMenu.bind(this)} to="/">
+              Blog
+            </Link>
           </li>
-          <li className={`${this.isCurrentRoute("work") ? "active" : ""}`}>
-            <Link onClick={this.toggleMenu.bind(this)} to="/work">Work</Link>
+          <li className={this.getRouteClass("work")}>
+            <Link onClick={this.toggleNavMenu.bind(this)} to="/work">
+              Work
+            </Link>
           </li>
-          <li className={`${this.isCurrentRoute("about") ? "active" : ""}`}>
-            <Link onClick={this.toggleMenu.bind(this)} to="/about">About</Link>
+          <li className={this.getRouteClass("about")}>
+            <Link onClick={this.toggleNavMenu.bind(this)} to="/about">
+              About
+            </Link>
           </li>
           <li>
             <a href="https://github.com/tylerreckart" target="_blank">
@@ -108,21 +116,34 @@ export default class NavMenu extends React.Component {
   render() {
     const { isMobile, isActive, reverseAnimation } = this.state;
 
+    const applyMobileClass = isMobile === true ? "mobile" : "";
+    const applyActiveClass = isActive === true ? "active" : "";
+    const shouldReverse = reverseAnimation === true ? "reverse" : "";
+
     return (
-      <div id="nav-menu" className={isMobile === true ? "mobile" : ""}>
+      <div id="nav-menu" className={applyMobileClass}>
         {isMobile === true ? (
           <React.Fragment>
             <div className="hamburger-container">
-              <div className="hamburger-box" onClick={this.toggleMenu.bind(this)}>
-                <span className={`hamburger ${isActive === true ? "active" : ""} ${reverseAnimation === true ? "reverse" : ""}`} />
+              <div
+                className="hamburger-box"
+                onClick={this.toggleNavMenu.bind(this)}
+              >
+                <span
+                  className={`hamburger ${applyActiveClass} ${shouldReverse}`}
+                />
               </div>
             </div>
-            {(isActive === true || reverseAnimation === true) ? this.renderNav("nav-active") : null}
+            {isActive === true || reverseAnimation === true
+              ? this.renderNavMenu()
+              : null}
             <div
-              className={`nav-overlay ${isActive === true ? "active" : ""} ${reverseAnimation === true ? "reverse" : ""}`}
+              className={`nav-overlay ${applyActiveClass} ${shouldReverse}`}
             />
           </React.Fragment>
-        ) : this.renderNav()}
+        ) : (
+          this.renderNavMenu()
+        )}
       </div>
     );
   }
