@@ -64,5 +64,13 @@ module.exports = {
       }
     },
     `gatsby-mdx`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingID: "UA-70418516-1",
+        head: false,
+        anonymize: true,
+      }
+    }
   ],
 };

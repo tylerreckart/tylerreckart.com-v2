@@ -43,9 +43,7 @@ export default class NavMenu extends React.Component {
 
       if (isRoute) {
         return "active";
-      } else if (isRoute && path === ("" || "/")) {
-        return "active";
-      } else if (isBlogRoute && route !== "work" && route !== "about") {
+      } else if (isBlogRoute && (route !== "work" && route !== "about")) {
         return "active";
       }
     }
@@ -77,8 +75,7 @@ export default class NavMenu extends React.Component {
   }
 
   renderNavMenu() {
-    const { reverseAnimation } = this.state;
-    const shouldReverse = reverseAnimation === true ? "reverse" : "";
+    const shouldReverse = this.state.reverseAnimation === true ? "reverse" : "";
 
     return (
       <nav className={shouldReverse}>
