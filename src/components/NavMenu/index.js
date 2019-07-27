@@ -34,7 +34,9 @@ export default class NavMenu extends React.Component {
   isCurrentRoute(route) {
     if (typeof window !== "undefined") {
       const path = window.location.pathname;
+      console.log(route);
       console.log(path);
+      console.log(locaiton[1]);
       const location = path.split("/");
       console.log(location);
       const isRoute = location[1] === route;
