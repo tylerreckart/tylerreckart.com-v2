@@ -105,7 +105,7 @@ export default class NavMenu extends React.Component {
     const { isMobile, isActive, reverseAnimation } = this.state;
 
     return (
-      <div id="nav-menu" className={isMobile && "mobile"}>
+      <div id="nav-menu" className={isMobile === true ? "mobile" : ""}>
         {isMobile === true ? (
           <React.Fragment>
             <div className="hamburger-container">
