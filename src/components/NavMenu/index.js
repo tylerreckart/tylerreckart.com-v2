@@ -36,10 +36,10 @@ export default class NavMenu extends React.Component {
       const path = window.location.pathname;
       console.log(route);
       console.log(path);
-      console.log(locaiton[1]);
+      console.log(location[1]);
       const location = path.split("/");
       console.log(location);
-      const isRoute = location[1] === route;
+      const isRoute = location[1] == route;
       console.log(isRoute);
       // Match blog routes by the publication date in the path
       const isBlogRoute = path.substring(1, 11).match(/([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/g);
