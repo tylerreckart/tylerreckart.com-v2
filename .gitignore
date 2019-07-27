@@ -9,3 +9,6 @@ yarn-error.log
 package-lock.json
 # Email server config
 server/config.js
+
+.env.development
+.env.production

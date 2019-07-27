@@ -42,25 +42,24 @@ export default class ContactForm extends React.Component {
     e.preventDefault();
 
     const { fullName, email, subject, message } = this.state;
-    console.log(fullName, email, subject, message);
+
     axios({
       method: "POST",
-      url: "https://tylerreckart.com:4040/send-mail",
+      url: process.env.GATSBY_API_URL,
       data: {
         fullName,
         email,
-        subject,
+        messageSubject: subject,
         message
       }
     }).then(response => {
       const { data } = response;
-
-      if (data.msg === 'success') {
-        alert("Message sent");
+      if (data.MessageId.length > 0) {
+        alert("Your message has been sent. I'll do my best to respond as quickly as possible.");
 
         this.resetForm();
-      } else if (data.msg == 'fail') {
-        alert('Message failed to send');
+      } else {
+        alert(`Message failed to send. Please email me at ${process.env.GATSBY_SUPPORT_EMAIL}. I apologize for the inconvenience.`);
       }
     });
   }
