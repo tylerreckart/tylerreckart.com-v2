@@ -32,14 +32,18 @@ export default class NavMenu extends React.Component {
   }
 
   isCurrentRoute(route) {
-    let location;
     if (typeof window !== "undefined") {
-      location = window.location.pathname.split("/");
+      const path = window.location.pathname;
+      const location = path.split("/");
+      const isRoute = location[1] === route;
+      // Match blog routes by the publication date in the path
+      const isBlogRoute = path.substring(1, 11).match(/([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/g);
 
-      const blogRoute = window.location.pathname.substring(1, 11).match(/([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/g);
-      if (location[1] === route) {
+      if (isRoute) {
         return true;
-      } else if (route === "" && (blogRoute && blogRoute.length > 0)) {
+      } else if (isRoute && path === ("" || "/")) {
+        return true;
+      } else if (isBlogRoute && route !== "work" && route !== "about") {
         return true;
       }
     }
