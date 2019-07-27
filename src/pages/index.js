@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import Layout from "../templates/client";
 import Pagination from "../components/Pagination";
 import PostPreview from '../components/PostPreview';
 
@@ -49,17 +49,6 @@ class Index extends React.Component {
     const sliceStart = currentPage === 1 ? 0 : currentPage * 4 - 4;
     const sliceEnd = currentPage === 1 ? 4 : currentPage * 4;
     const sliceLength = posts.slice(sliceStart, sliceEnd).length;
-
-    // fetch(
-    //   "https://www.goodreads.com/user/show/28962435.xml?key=Fma4EAruN5x1cUtoAq1nJw",
-    //   {
-    //     headers: {
-    //       "Content-Type": "application/xml",
-    //       "X-Content-Type-Options": "nosniff"
-    //     },
-    //     mode: "no-cors"
-    //   }
-    // ).then(response => console.log(response));
 
     return (
       <Layout>

@@ -20,13 +20,7 @@ const TemplateWrapper = ({ children }) => (
       <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet" />
     </Helmet>
-    <Header />
-    <div id="template">
-      <div id="content-wrapper">
-        {children}
-      </div>
-      <Footer />
-    </div>
+    {children}
   </div>
 );
 

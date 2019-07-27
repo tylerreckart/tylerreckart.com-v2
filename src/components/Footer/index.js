@@ -1,12 +1,10 @@
 import React from "react";
 import Link from "gatsby-link";
-import Castle from "../Svg/castle-unified";
 
 const currentYear = new Date().getFullYear();
 
 export default () => (
   <div id="footer">
-    {/* <Castle className="castle" fill="#6C7D8F" /> */}
     <ul className="footer-nav">
       <li>
         <Link to="/">Blog</Link>
