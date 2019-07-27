@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import moment from 'moment';
-import Layout from '../templates/layout';
+import Layout from '../templates/client';
 import { graphql } from 'gatsby';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 import { MDXRenderer } from 'gatsby-mdx';
