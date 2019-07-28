@@ -9,7 +9,8 @@ export default class ContactForm extends React.Component {
       fullName: '',
       email: '',
       subject: '',
-      message: ''
+      message: '',
+      isSending: false,
     };
 
     this.handleFullNameInput = this.handleFullNameInput.bind(this);
@@ -41,6 +42,8 @@ export default class ContactForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
+    this.setState({ isSending: true });
+
     const { fullName, email, subject, message } = this.state;
 
     axios({
@@ -56,6 +59,7 @@ export default class ContactForm extends React.Component {
       const { data } = response;
       if (data.MessageId.length > 0) {
         alert("Your message has been sent. I'll do my best to respond as quickly as possible.");
+        this.setState({ isSending: false });
 
         this.resetForm();
       } else {
@@ -76,13 +80,15 @@ export default class ContactForm extends React.Component {
   }
 
   render() {
+    const { isSending } = this.state;
+
     return (
       <form id="form" className="contact-form" onSubmit={this.onSubmit}>
         <input type="text" placeholder="John Smith" onChange={this.handleFullNameInput} />
         <input type="email" placeholder="john.smith@yourdomain.com" onChange={this.handleEmailAddressInput} />
         <input type="text" placeholder="Software consulting opportunity" onChange={this.handleSubjectInput} />
         <textarea placeholder="Lorem ipsum..." onChange={this.handleMessageInput}></textarea>
-        <input type="submit" className="contact-form__button"value="Submit Form"></input>
+        <input type="submit" className="contact-form__button"value={isSending !== true ? "Submit Form" : "Sending Message..."}></input>
       </form>
     );
   }
