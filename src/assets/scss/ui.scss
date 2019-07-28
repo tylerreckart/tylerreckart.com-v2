@@ -20,6 +20,7 @@
   margin-top: 0;
   margin-bottom: 0;
   position: 'relative';
+  width: 100%;
 }
 
 #comments {
@@ -97,4 +98,14 @@
 
 .about-page-wrapper {
   margin: 24px;
+}
+
+.loading__screen {
+  background-color: darken(#ffffff, 5%);
+  height: 800px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #8194A4;
 }

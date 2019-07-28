@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../templates/client";
 import Pagination from "../components/Pagination";
-import PostPreview from '../components/PostPreview';
+import PostPreview from "../components/PostPreview";
 
 class Index extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class Index extends React.Component {
 
   render() {
     const { currentPage, pageCount, nextPage, prevPage } = this.state;
-    const {
+    let {
       data: {
         allMdx: { edges: posts }
       }
@@ -53,18 +53,26 @@ class Index extends React.Component {
     return (
       <Layout>
         <div id="container">
-        {posts
-          .filter(post => post.node.frontmatter.title.length > 0)
-          .slice(sliceStart, sliceEnd)
-          .map(({ node: post }, i) => {
-            return <PostPreview post={post} lastOfType={i === sliceLength - 1} />;
-          })}
-          <Pagination
-            currentPage={currentPage}
-            pageCount={pageCount}
-            nextPage={nextPage}
-            prevPage={prevPage}
-          />
+          {posts !== undefined && posts.length > 0 ? (
+            posts
+              .filter(post => post.node.frontmatter.title.length > 0)
+              .slice(sliceStart, sliceEnd)
+              .map(({ node: post }, i) => {
+                return (
+                  <React.Fragment>
+                    <PostPreview post={post} lastOfType={i === sliceLength - 1} />
+                    <Pagination
+                      currentPage={currentPage}
+                      pageCount={pageCount}
+                      nextPage={nextPage}
+                      prevPage={prevPage}
+                    />
+                  </React.Fragment>
+                );
+              })
+          ) : (
+            <div className="loading__screen"><span>Fetching Posts...</span></div>
+          )}
         </div>
       </Layout>
     );
