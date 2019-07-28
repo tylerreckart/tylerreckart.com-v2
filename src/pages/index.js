@@ -54,22 +54,22 @@ class Index extends React.Component {
       <Layout>
         <div id="container">
           {posts !== undefined && posts.length > 0 ? (
-            posts
+            <React.Fragment>
+            {posts
               .filter(post => post.node.frontmatter.title.length > 0)
               .slice(sliceStart, sliceEnd)
               .map(({ node: post }, i) => {
                 return (
-                  <React.Fragment>
-                    <PostPreview post={post} lastOfType={i === sliceLength - 1} />
-                    <Pagination
-                      currentPage={currentPage}
-                      pageCount={pageCount}
-                      nextPage={nextPage}
-                      prevPage={prevPage}
-                    />
-                  </React.Fragment>
+                  <PostPreview post={post} lastOfType={i === sliceLength - 1} />
                 );
-              })
+              })}
+              <Pagination
+                currentPage={currentPage}
+                pageCount={pageCount}
+                nextPage={nextPage}
+                prevPage={prevPage}
+              />
+            </React.Fragment>
           ) : (
             <div className="loading__screen"><span>Fetching Posts...</span></div>
           )}
