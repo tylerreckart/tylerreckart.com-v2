@@ -1,7 +1,7 @@
 ---
 path: "/2018/04/10/type-level-programming-part-1"
 date: "2018-04-10T17:12:33.962Z"
-title: "Type Level Programming: Part 1"
+title: "Type Level Programming"
 ---
 
 As tools and methodologies for software development have evolved, the functional programming paradigm has washed over the tools we use across the stack.  Haskell has been a [go-to tool for developers to use for data analysis](https://github.com/BinRoot/Haskell-Data-Analysis-Cookbook) for close to three decades. On the other end, languages like [TypeScript](https://www.typescriptlang.org/) and [Elm](http://elm-lang.org/) have hit the front-end landscape like a wave. Thus allowing developers to develop type-safe applications that compile to browser-readable JavaScript. You've probably heard functional programming advocates discussing all the benefits of these tools and what you can do by putting more information into a type system. And well, they're right. On the front end, if you look closely, you can see [how languages like Elm influenced the architecture libraries like Redux](https://redux.js.org/introduction/prior-art#elm).
@@ -112,5 +112,3 @@ Succ :: Nat -> Nat
 ```
 
 And that's all that there is to it when it comes to extending our type and kind constructors. We now have the ability to architect pretty basic types and kinds. However, in order to actually use them, though, we'll need to dive in a little deeper.
-
-*In the next article, part two of this series on type level programming, we'll discuss how to implement these types with GADTs, Vectors, Type Families, and more.*
