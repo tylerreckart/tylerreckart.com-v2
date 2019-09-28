@@ -89,7 +89,6 @@ export const postsQuery = graphql`
             body
           }
           id
-          timeToRead
           frontmatter {
             date
             path
