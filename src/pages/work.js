@@ -16,7 +16,7 @@ const graphQLSlides = [
   'https://t-reckart.s3.us-east-2.amazonaws.com/portfolio/graphql-in-motion/graphq-news__website.png',
 ];
 
-export default () => (
+const WorkScreen = () => (
   <Layout>
     <div className="inner-page">
       <div className="section">
@@ -53,13 +53,17 @@ export default () => (
         <hr />
       </div>
       <div className="section">
+        <h3 className="section-title">Alley <a href="https://alley.co" target="_blank"><LinkIcon /></a></h3>
+        <p className="section-content">Senior Software Developer, October 2019 to Present</p>
+      </div>
+      <div className="section">
         <h3 className="section-title">BoomTown <a href="https://boomtownroi.com" target="_blank"><LinkIcon /></a></h3>
-        <p className="section-content">Software Engineer, March 2017 to Present</p>
+        <p className="section-content">Software Engineer, March 2017 to October 2019</p>
         <Slider slides={btSlides} />
       </div>
       <div className="section">
         <h3 className="section-title">Freelance</h3>
-        <p className="section-content">Software Developer &amp; Designer, September 2015 to Present</p>
+        <p className="section-content">Software Developer &amp; Designer, September 2015 to October 2019</p>
       </div>
       <div className="section">
         <h3 className="section-title">TipHive <a href="https://friyay.io" target="_blank"><LinkIcon /></a></h3>
@@ -72,3 +76,6 @@ export default () => (
     </div>
   </Layout>
 );
+
+export default WorkScreen;
+

@@ -6,7 +6,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-csv',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
     'gatsby-plugin-google-analytics',
@@ -16,27 +15,6 @@ module.exports = {
         path: `${__dirname}/src/posts`,
         name: 'posts',
       },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`,
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          'gatsby-remark-prismjs',
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1000,
-            },
-          },
-        ]
-      }
     },
     {
       resolve: `gatsby-plugin-favicon`,
