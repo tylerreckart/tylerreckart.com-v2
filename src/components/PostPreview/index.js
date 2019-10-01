@@ -2,9 +2,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 import moment from 'moment';
 
-export default class PostPreview extends React.Component {
-  render() {
-    const { post, lastOfType } = this.props;
+const PostPreview = props => {
+    const { post, lastOfType } = props;
 
     return (
       <React.Fragment>
@@ -46,10 +45,12 @@ export default class PostPreview extends React.Component {
               >
                 Continue Reading
               </button>
-            </Link>
-          </div>
+          </Link>
         </div>
-      </React.Fragment>
-    );
-  }
+      </div>
+    </React.Fragment>
+  );
 }
+
+export default PostPreview;
+
