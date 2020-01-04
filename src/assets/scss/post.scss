@@ -237,6 +237,7 @@
       max-width: 300px;
       text-align: center;
       line-height: 20px;
+      margin-top: 10px;
     }
 
     @media (max-width: 600px) {
@@ -250,6 +251,7 @@
   position: relative;
   overflow: hidden;
   padding-top: 56.25%;
+  margin-bottom: 16px;
 
   &  > iframe {
     position: absolute;

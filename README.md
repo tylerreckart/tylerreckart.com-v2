@@ -23,7 +23,3 @@ yarn develop
 yarn build
 ```
 
-### Deploy (WIP)
-```
-yarn deploy
-```
